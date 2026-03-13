@@ -1,13 +1,13 @@
 import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 
 export interface TrustBadge {
-    icon: IconDefinition;
+    icon: IconDefinition | string;
     title: string;
     desc: string;
 }
 
 export interface Feature {
-    icon: IconDefinition;
+    icon: IconDefinition | string;
     title: string;
     description: string;
 }

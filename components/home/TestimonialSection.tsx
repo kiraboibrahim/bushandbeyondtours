@@ -2,144 +2,110 @@ import Image from "next/image";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { Testimonial } from "@/models/Testimonial";
+import siteConfig from "@/app/siteConfig";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faQuoteRight } from "@fortawesome/free-solid-svg-icons";
 
-const testimonials: Testimonial[] = [
-    {
-        id: 1,
-        name: "Sarah Nakato",
-        profession: "Adventure Traveler",
-        image: "/img/testimonial-1.jpg",
-        text: "The gorilla trekking in Bwindi was a once-in-a-lifetime experience. The guides were knowledgeable and very friendly!",
-    },
-    {
-        id: 2,
-        name: "David Okello",
-        profession: "Safari Enthusiast",
-        image: "/img/testimonial-2.jpg",
-        text: "Queen Elizabeth National Park safari exceeded my expectations. We saw lions, elephants, and even hippos in the wild!",
-    },
-    {
-        id: 3,
-        name: "Grace Achieng",
-        profession: "Cultural Explorer",
-        image: "/img/testimonial-3.jpg",
-        text: "Visiting the Ssese Islands was amazing. The beaches are pristine and the local community is welcoming and kind.",
-    },
-    {
-        id: 4,
-        name: "Michael Kato",
-        profession: "Nature Lover",
-        image: "/img/testimonial-4.jpg",
-        text: "The Rwenzori Mountains hike was challenging but incredibly rewarding. Stunning scenery all the way!",
-    },
-    {
-        id: 5,
-        name: "Esther Namutebi",
-        profession: "Photographer",
-        image: "/img/testimonial-5.jpg",
-        text: "Jinja and the Nile adventure sports were thrilling. Kayaking and bungee jumping made it unforgettable.",
-    },
-    {
-        id: 6,
-        name: "Joseph Lutaaya",
-        profession: "Explorer",
-        image: "/img/testimonial-6.jpg",
-        text: "Kibale Forest chimpanzee tracking was amazing. The guides ensured we had a safe and educational experience.",
-    },
-];
+const TestimonialSection = () => {
+    const { badge, title, items } = siteConfig.home.testimonials;
 
-const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 3000,
-    pauseOnHover: true,
-    responsive: [
-        { breakpoint: 992, settings: { slidesToShow: 2 } },
-        { breakpoint: 576, settings: { slidesToShow: 1 } },
-    ],
-};
+    const settings = {
+        dots: true,
+        infinite: true,
+        speed: 800,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 5000,
+        pauseOnHover: true,
+        arrows: false,
+        responsive: [
+            { breakpoint: 1024, settings: { slidesToShow: 2 } },
+            { breakpoint: 640, settings: { slidesToShow: 1 } },
+        ],
+    };
 
-const TestimonialSection = () => (
-    <div className="w-full py-12" id="testimonials">
-        <div className="max-w-[1140px] mx-auto px-4 py-12 text-center">
-            <h6 className="text-[#7AB730] uppercase tracking-[5px] font-medium text-base mb-2">
-                Testimonial
-            </h6>
-            <h1 className="text-[2.5rem] font-bold leading-[1.2] text-[#212121] mb-0">
-                What Our Clients Say
-            </h1>
+    return (
+        <section className="py-24 bg-brand-bone relative overflow-hidden" id="testimonials">
+            {/* Background elements */}
+            <div className="absolute top-0 right-0 w-64 h-64 bg-brand-gold/5 rounded-full -translate-y-1/2 translate-x-1/2"></div>
+            <div className="absolute bottom-0 left-0 w-96 h-96 bg-brand-green/5 rounded-full translate-y-1/2 -translate-x-1/2"></div>
 
-            <div className="mt-8">
-                <Slider {...settings}>
-                    {testimonials.map((t) => (
-                        <div key={t.id} className="px-2">
-                            <div className="text-center pb-8">
-                                <Image
-                                    width={80}
-                                    height={80}
-                                    className="mx-auto rounded-full"
-                                    src={t.image}
-                                    alt={t.name}
-                                />
-                                <div
-                                    className="bg-white p-4 mt-4 shadow-[0_0_30px_#CCCCCC] transition-shadow duration-500 min-h-[130px] flex flex-col justify-center"
-                                >
-                                    <p className="mb-2 text-[0.9rem] text-[#656565] leading-[1.5]">
-                                        {t.text}
-                                    </p>
-                                    <h5 className="truncate mb-0 text-xl font-medium text-[#212121] mt-2">
-                                        {t.name}
-                                    </h5>
-                                    <span className="text-[0.8rem] text-[#656565]">
-                                        {t.profession}
-                                    </span>
+            <div className="max-w-7xl mx-auto px-4 relative z-10">
+                <div className="text-center mb-16">
+                    <h6 className="text-brand-gold uppercase tracking-[4px] font-bold text-sm mb-3">
+                        {badge}
+                    </h6>
+                    <h2 className="text-4xl md:text-5xl font-serif font-bold text-brand-green mb-6">
+                        {title}
+                    </h2>
+                    <div className="w-24 h-1 bg-brand-gold mx-auto"></div>
+                </div>
+
+                <div className="testimonial-slider-container pb-12">
+                    <Slider {...settings}>
+                        {items.map((t: any, idx: number) => (
+                            <div key={idx} className="px-4 h-full py-8">
+                                <div className="bg-white rounded-2xl p-8 md:p-10 shadow-xl border border-brand-bone/50 h-full flex flex-col relative group hover:border-brand-gold transition-all duration-500">
+                                    <div className="absolute top-6 right-8 text-brand-gold/20 group-hover:text-brand-gold/40 transition-colors duration-500">
+                                        <FontAwesomeIcon icon={faQuoteRight} className="text-4xl" />
+                                    </div>
+
+                                    <div className="flex-grow">
+                                        <p className="text-brand-charcoal/80 italic font-serif text-lg leading-relaxed mb-8">
+                                            &quot;{t.text}&quot;
+                                        </p>
+                                    </div>
+
+                                    <div className="flex items-center gap-4 mt-auto pt-8 border-t border-brand-bone">
+                                        <div className="relative w-14 h-14 flex-shrink-0">
+                                            <Image
+                                                src={t.image}
+                                                alt={t.name}
+                                                fill
+                                                className="rounded-full object-cover border-2 border-brand-gold/20"
+                                            />
+                                        </div>
+                                        <div>
+                                            <h4 className="font-serif font-bold text-brand-green text-lg leading-none mb-1">
+                                                {t.name}
+                                            </h4>
+                                            <p className="text-brand-gold text-[10px] font-bold uppercase tracking-widest">
+                                                {t.role}
+                                            </p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    ))}
-                </Slider>
+                        ))}
+                    </Slider>
+                </div>
             </div>
-        </div>
 
-        <style jsx global>{`
-            /* Testimonial carousel custom styles */
-            .slick-dots {
-                margin-top: 1.25rem;
-                text-align: center;
-            }
-            
-            .slick-dots li button:before {
-                position: relative;
-                display: inline-block;
-                width: 20px;
-                height: 20px;
-                background: #DDDDDD;
-                border-radius: 0;
-                content: '';
-                transition: all 0.5s;
-                opacity: 1;
-            }
-            
-            .slick-dots li.slick-active button:before {
-                width: 40px;
-                background: #7AB730;
-            }
-            
-            .slick-slide > div > div > div {
-                transition: box-shadow 0.5s;
-            }
-            
-            .slick-center .testimonial-text,
-            .slick-current .testimonial-text {
-                box-shadow: 0 0 30px #CCCCCC;
-            }
-        `}</style>
-    </div>
-);
+            <style jsx global>{`
+                .testimonial-slider-container .slick-dots {
+                    bottom: -20px;
+                }
+                .testimonial-slider-container .slick-dots li {
+                    margin: 0 4px;
+                }
+                .testimonial-slider-container .slick-dots li button:before {
+                    content: '';
+                    width: 12px;
+                    height: 12px;
+                    background: #d4d4d4;
+                    border-radius: 50%;
+                    opacity: 1;
+                    transition: all 0.3s ease;
+                }
+                .testimonial-slider-container .slick-dots li.slick-active button:before {
+                    background: #c5a059;
+                    width: 24px;
+                    border-radius: 6px;
+                }
+            `}</style>
+        </section>
+    );
+};
 
 export default TestimonialSection;

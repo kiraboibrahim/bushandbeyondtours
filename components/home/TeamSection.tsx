@@ -8,33 +8,10 @@ import {
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import { TeamMember } from '@/models/TeamMember';
 
-const teamMembers: TeamMember[] = [
-    {
-        name: "Maria Uhiriwe",
-        socials: {
-            facebook: "",
-            linkedin: "",
-            twitter: "",
-            instagram: "",
+import siteConfig from '@/app/siteConfig';
 
-        },
-        picture: "/img/female-avatar.jpg",
-        designation: "CEO"
-    },
-    {
-        name: "Robinah Rutaza",
-        socials: {
-            facebook: "",
-            linkedin: "",
-            twitter: "",
-            instagram: "",
-
-        },
-        picture: "/img/female-avatar.jpg",
-        designation: "Tour Executive"
-    },
-]
 const TeamSection = () => {
+    const teamMembers = siteConfig.images.team as TeamMember[];
     const socialIcons: Record<string, IconDefinition> = {
         twitter: faTwitter,
         facebook: faFacebookF,
@@ -42,48 +19,51 @@ const TeamSection = () => {
         linkedin: faLinkedinIn,
     };
 
-    return (
-        <div className="w-full py-5" id="team">
-            <div className="max-w-[1140px] mx-auto px-[15px] pt-5 pb-3 text-center">
-                <h6
-                    className="text-[#7AB730] uppercase mb-2 text-base font-medium leading-[1.2]"
-                    style={{ letterSpacing: 5 }}
-                >
-                    Guides
-                </h6>
-                <h1 className="mb-2 text-[2.5rem] max-[1200px]:text-[calc(1.375rem_+_1.5vw)] font-medium leading-[1.2] text-[#212121]">
-                    Our Team
-                </h1>
-                <div className="flex flex-wrap -mx-[15px]">
-                    {teamMembers.map((teamMember) => (
-                        <div key={teamMember.name} className="lg:w-1/3 md:w-1/3 sm:w-1/2 w-full px-[15px] pb-2">
-                            <div className="group bg-white mb-4 transition-[box-shadow_0.5s] shadow-[0_0_30px_#CCCCCC]">
-                                <div className="relative overflow-hidden">
-                                    <img
-                                        className="max-w-full w-full h-auto transition-transform duration-500 group-hover:scale-[1.2]"
-                                        src={teamMember.picture}
-                                        alt={teamMember.name}
-                                    />
-                                    <div className="absolute w-full h-full top-0 left-0 flex items-center justify-center transition-[background-color_0.5s]">
-                                        {Object.keys(socialIcons).map((icon, idx) => (
-                                            <a key={idx}
-                                                className="invisible group-hover:visible inline-flex items-center justify-center w-[36px] h-[36px] text-center border border-[#7AB730] text-[#7AB730] mr-2 transition-all duration-150 hover:bg-[#7AB730] hover:text-white"
-                                                href="#"
-                                                style={{
-                                                    transitionDelay: `${idx * 0.05}s`
-                                                }}
-                                            >
-                                                <FontAwesomeIcon icon={socialIcons[icon]} />
-                                            </a>
+    if (!teamMembers || teamMembers.length === 0) {
+        return null;
+    }
 
-                                        ))}
+    return (
+        <div className="w-full py-16 bg-white" id="team">
+            <div className="max-w-[1140px] mx-auto px-[15px] text-center">
+                <h6
+                    className="text-brand-gold uppercase mb-2 text-sm font-bold tracking-[4px]"
+                >
+                    {siteConfig.home.team.badge}
+                </h6>
+                <h1 className="mb-12 text-[2.5rem] max-[1200px]:text-[calc(1.375rem_+_1.5vw)] font-serif font-bold leading-[1.2] text-brand-green">
+                    {siteConfig.home.team.title}
+                </h1>
+                <div className="flex flex-wrap -mx-[15px] justify-center">
+                    {teamMembers.map((member) => (
+                        <div key={member.name} className="lg:w-1/3 md:w-1/2 w-full px-[15px] mb-8">
+                            <div className="group bg-brand-bone/10 transition-all duration-500 hover:shadow-2xl rounded-sm overflow-hidden border border-brand-bone/30">
+                                <div className="relative overflow-hidden aspect-[3/4]">
+                                    <img
+                                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                        src={member.picture}
+                                        alt={member.name}
+                                    />
+                                    <div className="absolute inset-0 bg-brand-green/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center backdrop-blur-[2px]">
+                                        <div className="flex space-x-3 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                                            {Object.entries(member.socials).map(([key, url], idx) => (
+                                                <a key={key}
+                                                    className="w-10 h-10 rounded-full border border-white/50 text-white flex items-center justify-center hover:bg-brand-gold hover:border-brand-gold hover:text-brand-green transition-all"
+                                                    href={url}
+                                                >
+                                                    <FontAwesomeIcon icon={socialIcons[key] || faTwitter} />
+                                                </a>
+                                            ))}
+                                        </div>
                                     </div>
                                 </div>
-                                <div className="text-center py-4">
-                                    <h5 className="mb-2 text-[1.25rem] font-medium leading-[1.2] text-[#212121] overflow-hidden text-ellipsis whitespace-nowrap">
-                                        {teamMember.name}
+                                <div className="text-center py-6 px-4">
+                                    <h5 className="mb-1 text-xl font-serif font-bold text-brand-green">
+                                        {member.name}
                                     </h5>
-                                    <p className="m-0 text-[#6c757d]">{teamMember.designation}</p>
+                                    <p className="m-0 text-brand-gold text-xs font-bold uppercase tracking-widest">
+                                        {member.designation}
+                                    </p>
                                 </div>
                             </div>
                         </div>

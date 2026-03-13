@@ -14,7 +14,6 @@ import SpecialOffer from "@/components/home/SpecialOffer";
 import TeamSection from "@/components/home/TeamSection";
 import TestimonialSection from "@/components/home/TestimonialSection";
 import BlogSection from "@/components/home/BlogSection";
-import Footer from "@/components/common/Footer";
 import Gallery from "@/components/home/Gallery";
 import BackToTopFAB from "@/components/home/BackToTop";
 
@@ -42,6 +41,7 @@ export default function Home() {
         <ServicesSection key="services" />,
         <PackagesSection key="packages" />,
         <SpecialOffer key="registration" />,
+        <TestimonialSection key="testimonials" />,
         <TeamSection key="team" />,
         <BlogSection key="blog" />,
     ];

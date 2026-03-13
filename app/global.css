@@ -1,1 +1,11 @@
 @import "tailwindcss";
+
+@theme {
+  --color-brand-green: #0B4231;
+  --color-brand-gold: #E69F00;
+  --color-brand-charcoal: #212121;
+  --color-brand-bone: #FDFDF9;
+
+  --font-serif: "Playfair Display", serif;
+  --font-sans: "DM Sans", sans-serif;
+}

@@ -10,32 +10,7 @@ const Navbar = () => {
     const [safarisOpen, setSafarisOpen] = useState(false);
     const [servicesOpen, setServicesOpen] = useState(false);
 
-    const navLinks = [
-        { label: "Home", href: "/" },
-        { label: "About Us", href: "/about" },
-        { label: "Community", href: "/community" },
-        {
-            label: "Safaris",
-            href: "#safaris",
-            dropdown: [
-                { label: "Three Days Gorilla Tracking", href: "/safaris/three-days-gorilla-tracking" },
-                { label: "Six Days of Gorilla Tracking and Chimp Tracking", href: "/safaris/six-days-gorilla-chimp-tracking" },
-                { label: "Eight Days Safari", href: "/safaris/eight-days-safari" },
-            ],
-        },
-        {
-            label: "Other Services",
-            href: "#services",
-            dropdown: [
-                { label: "Car Rentals", href: "/other-services/car-rental" },
-                { label: "Honeymoon Package", href: "/other-services/honey-moon" },
-                { label: "Air Ticketing", href: "/other-services/air-ticketing" },
-                { label: "Consultancy", href: "/other-services/consultancy" },
-            ],
-        },
-        { label: "Contact Us", href: "/contact" },
-        { label: "Pay Here", href: "/pay" },
-    ];
+    const navLinks = siteConfig.navigation;
 
     const handleDropdownToggle = (dropdown: string) => {
         if (dropdown === "safaris") {
@@ -74,9 +49,9 @@ const Navbar = () => {
     return (
         <div className="w-full relative p-0 lg:before:absolute lg:before:content-[''] lg:before:w-full lg:before:h-1/2 lg:before:top-[50%] lg:before:left-0 lg:before:bg-gray-200 mt-4">
             <div className="lg:max-w-[960px] max-w-full mx-auto relative p-0 lg:px-3" style={{ zIndex: 9 }}>
-                <nav className="relative flex flex-wrap items-center justify-between bg-white shadow-[0_0.5rem_1rem_rgba(0,0,0,0.15)] py-2 lg:py-0 px-12 lg:px-4">
+                <nav className="relative flex flex-wrap items-center justify-between bg-white shadow-[0_0.5rem_1rem_rgba(0,0,0,0.08)] py-2 lg:py-0 px-12 lg:px-4">
                     <Link href="/" className="my-auto py-[0.3125rem] mr-4 leading-[inherit] whitespace-nowrap hover:no-underline">
-                        <h1 className="m-0 font-bold tracking-wide text-xl leading-[1.2] bg-gradient-to-r from-[#7AB730] to-[#527a20] bg-clip-text text-transparent">
+                        <h1 className="m-0 font-serif font-bold tracking-tight text-3xl leading-[1.2] text-brand-green">
                             {siteConfig.company.name}
                         </h1>
                     </Link>
@@ -122,12 +97,12 @@ const Navbar = () => {
                                                     handleDropdownToggle(item.label === "Safaris" ? "safaris" : "services");
                                                 }
                                             }}
-                                            className={`w-full text-left block py-[30px] px-[15px] text-[#212121] font-medium outline-none hover:text-[#7AB730] hover:no-underline lg:pr-2 lg:pl-2 transition-colors duration-150 ${index === 0 ? "text-[#7AB730]" : ""}`}
+                                            className={`w-full text-left block py-[30px] px-[15px] text-brand-charcoal font-semibold uppercase tracking-widest text-xs outline-none hover:text-brand-gold hover:no-underline lg:pr-2 lg:pl-2 transition-colors duration-150 ${index === 0 ? "text-brand-gold" : ""}`}
                                         >
                                             {item.label}
                                             <FontAwesomeIcon
                                                 icon={faChevronDown}
-                                                className="ml-2 text-xs transition-transform duration-200"
+                                                className="ml-2 text-[10px] transition-transform duration-200"
                                                 style={{
                                                     transform: (item.label === "Safaris" && safarisOpen) || (item.label === "Other Services" && servicesOpen) ? "rotate(180deg)" : "rotate(0deg)"
                                                 }}
@@ -137,7 +112,7 @@ const Navbar = () => {
                                         <Link
                                             href={item.href}
                                             onClick={closeMobileMenu}
-                                            className={`block py-[30px] px-[15px] text-[#212121] font-medium outline-none hover:text-[#7AB730] hover:no-underline lg:pr-2 lg:pl-2 transition-colors duration-150 ${index === 0 ? "text-[#7AB730]" : ""}`}
+                                            className={`block py-[30px] px-[15px] text-brand-charcoal font-semibold uppercase tracking-widest text-xs outline-none hover:text-brand-gold hover:no-underline lg:pr-2 lg:pl-2 transition-colors duration-150 ${index === 0 ? "text-brand-gold" : ""}`}
                                         >
                                             {item.label}
                                         </Link>
@@ -146,7 +121,7 @@ const Navbar = () => {
                                     {/* Dropdown Menu */}
                                     {item.dropdown && (
                                         <div
-                                            className={`${(item.label === "Safaris" && safarisOpen) || (item.label === "Other Services" && servicesOpen) ? "block opacity-100" : "hidden opacity-0"} lg:absolute lg:top-full lg:left-0 lg:min-w-[15rem] lg:bg-white lg:shadow-[0_0.125rem_0.25rem_rgba(0,0,0,0.075)] lg:border lg:border-[rgba(0,0,0,0.15)] transition-all duration-200 ease-in-out`}
+                                            className={`${(item.label === "Safaris" && safarisOpen) || (item.label === "Other Services" && servicesOpen) ? "block opacity-100 translate-y-0" : "hidden opacity-0 translate-y-2"} lg:absolute lg:top-full lg:left-0 lg:min-w-[15rem] lg:bg-white lg:shadow-[0_10px_30px_rgba(0,0,0,0.1)] lg:border-t-2 lg:border-brand-gold transition-all duration-300 ease-in-out`}
                                             style={{ zIndex: 1000 }}
                                         >
                                             {item.dropdown.map((subItem) => (
@@ -154,7 +129,7 @@ const Navbar = () => {
                                                     key={subItem.label}
                                                     href={subItem.href}
                                                     onClick={closeMobileMenu}
-                                                    className="block w-full py-[0.5rem] px-6 clear-both font-normal text-[#212529] whitespace-nowrap bg-transparent border-0 hover:bg-[#f8f9fa] hover:text-[#16181b] hover:no-underline transition-colors duration-150"
+                                                    className="block w-full py-3 px-6 font-medium text-xs uppercase tracking-wider text-brand-charcoal hover:bg-brand-bone hover:text-brand-gold transition-colors duration-150"
                                                 >
                                                     {subItem.label}
                                                 </Link>

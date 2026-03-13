@@ -1,169 +1,153 @@
 import Link from "next/link";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGem, faHeart, faLeaf, faUsers, faGlobeAfrica, faPaperPlane } from "@fortawesome/free-solid-svg-icons";
 import siteConfig from "../siteConfig";
 
 const AboutUs = () => {
-    const values = [
-        {
-            title: "Excellence",
-            icon: (
-                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" /></svg>
-            ),
-            description: "Our team of expert travel specialists brings over 15 years of combined safari experience across East Africa. We partner exclusively with top-tier guides known for their professionalism and deep local knowledge, ensuring every journey is infused with authentic insights. From your first inquiry to your final farewell, you're in capable, seasoned hands."
-        },
-        {
-            title: "Passion",
-            icon: (
-                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
-            ),
-            description: "Your safari will be 100% tailor-made, designed around your interests, dreams, and budget. We don't take you on 'our safaris' – instead, you create the perfect trip with guidance from our specialists. Leveraging our wealth of experience, we provide insights and recommendations to ensure your journey is crafted precisely to your desires."
-        },
-        {
-            title: "Authenticity",
-            icon: (
-                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-            ),
-            description: "Proudly Ugandan-owned and managed, we bring authentic local perspective to every safari we craft. With deep roots in the region, we understand the land, the culture, and the people. Our service guides you through genuine experiences that connect you with the real heart of East Africa."
-        },
-        {
-            title: "Community",
-            icon: (
-                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
-            ),
-            description: "Tourism is a powerful tool for improving livelihoods in local communities. We actively participate in enriching the lives of communities we interact with – offering training to young people, sourcing produce locally, and contributing to economic growth and empowerment in the regions where we operate."
-        },
-        {
-            title: "Responsibility",
-            icon: (
-                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-            ),
-            description: "While delivering extraordinary African experiences, we are equally dedicated to sustainability and preserving wildlife, natural environments, and cultural heritage. We carefully select eco-conscious lodges, promote responsible tourism practices, and provide reusable water bottles to all guests – because protecting Africa's wilderness is everyone's responsibility."
-        }
-    ];
-
-    const stats = [
-        { num: "10+", label: "Years Experience" },
-        { num: "500+", label: "Happy Travelers" },
-        { num: "50+", label: "Safari Packages" },
-        { num: "100%", label: "Tailor-Made" }
-    ];
+    const valueIcons: Record<string, any> = {
+        excellence: faGem,
+        passion: faHeart,
+        authenticity: faGlobeAfrica,
+        community: faUsers,
+        responsibility: faLeaf
+    };
 
     return (
-        <div className="min-h-screen bg-gray-50 font-sans">
+        <div className="min-h-screen bg-brand-bone/30 font-sans">
             {/* Hero */}
-            <div className="relative h-96 bg-gradient-to-br from-[#212121] via-[#2d2d2d] to-[#212121] overflow-hidden">
+            <div className="relative h-[450px] bg-brand-charcoal overflow-hidden">
                 <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%239C92AC" fill-opacity="0.15"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")' }}></div>
                 <div className="absolute inset-0 flex flex-col justify-center items-center text-white text-center px-4">
-                    <div className="bg-[#7AB730] text-white text-xs font-bold px-4 py-1 rounded-full mb-4">ABOUT US</div>
-                    <p className="text-[#7AB730] font-semibold tracking-widest uppercase mb-2">{siteConfig.company.name}</p>
-                    <h1 className="text-4xl md:text-5xl font-bold mb-4">Experiences · People · Places</h1>
-                    <p className="text-gray-300 max-w-2xl">Crafting unforgettable African adventures since 2014</p>
+                    <div className="bg-brand-gold text-brand-charcoal text-[10px] font-bold px-4 py-1 rounded-full mb-8 tracking-[0.3em] uppercase">OUR JOURNEY</div>
+                    <p className="text-brand-gold font-serif italic tracking-widest text-lg mb-4">{siteConfig.company.name}</p>
+                    <h1 className="text-5xl md:text-7xl font-serif font-bold mb-8">{siteConfig.about.tagline}</h1>
+                    <div className="w-24 h-[1px] bg-brand-gold/50"></div>
                 </div>
             </div>
 
-            <div className="max-w-6xl mx-auto px-4 py-12">
+            <div className="max-w-7xl mx-auto px-4 py-20">
                 {/* Stats Bar */}
-                <div className="bg-white rounded-xl shadow-lg p-6 -mt-16 relative z-10 mb-12">
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
-                        {stats.map((stat, i) => (
-                            <div key={i} className="border-r last:border-r-0 border-gray-200">
-                                <p className="text-[#7AB730] font-bold text-2xl md:text-3xl">{stat.num}</p>
-                                <p className="text-gray-500 text-xs">{stat.label}</p>
+                <div className="bg-white rounded-2xl shadow-2xl p-10 -mt-32 relative z-10 mb-20 border border-brand-charcoal/5">
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
+                        {siteConfig.about.stats.map((stat, i) => (
+                            <div key={i} className="md:border-r last:border-r-0 border-brand-bone/50 px-4">
+                                <p className="text-brand-green font-serif font-bold text-4xl md:text-5xl mb-2">{stat.num}</p>
+                                <p className="text-brand-charcoal/40 text-[10px] uppercase font-bold tracking-[3px]">{stat.label}</p>
                             </div>
                         ))}
                     </div>
                 </div>
 
                 {/* Who We Are */}
-                <div className="bg-white rounded-lg shadow-md p-8 mb-8">
-                    <div className="flex items-center gap-3 mb-6">
-                        <div className="w-12 h-1 bg-[#7AB730]"></div>
-                        <span className="text-[#7AB730] font-semibold uppercase tracking-wider text-sm">Who We Are</span>
-                    </div>
-                    <h2 className="text-3xl font-bold text-[#212121] bg-gradient-to-r from-[#7AB730] to-[#527a20] bg-clip-text text-transparent mb-6">
-                        {siteConfig.company.name}
-                    </h2>
-                    <div className="grid md:grid-cols-2 gap-8">
-                        <div>
-                            <p className="text-gray-600 leading-relaxed mb-4">
-                                TripTonic Safaris was founded in 2014 by passionate Ugandan travel enthusiasts with a bold vision: to share the breathtaking beauty of East Africa with the world. Over a decade later, we have grown into one of Uganda&lsquo;s trusted tour operators, specializing in gorilla tracking, wildlife safaris, and authentic cultural experiences.
-                            </p>
-                            <p className="text-gray-600 leading-relaxed">
-                                Our name reflects our philosophy – we believe travel should be invigorating, energizing, and transformative. Like a tonic for the soul, our safaris are designed to refresh your spirit, broaden your horizons, and create memories that last a lifetime.
-                            </p>
+                <div className="bg-white rounded-3xl shadow-xl p-12 lg:p-20 mb-20 border border-brand-charcoal/5 relative overflow-hidden">
+                    <div className="absolute top-0 right-0 w-64 h-64 bg-brand-bone rounded-full -translate-y-1/2 translate-x-1/2 opacity-50"></div>
+                    <div className="relative z-10">
+                        <div className="flex items-center gap-4 mb-10">
+                            <div className="w-16 h-[2px] bg-brand-gold"></div>
+                            <span className="text-brand-gold font-bold uppercase tracking-[0.4em] text-xs">Genesis</span>
                         </div>
-                        <div>
-                            <p className="text-gray-600 leading-relaxed mb-4">
-                                Drawing on extensive experience and in-depth knowledge of the region&lsquo;s diverse attractions, we are committed to curating unique and authentic safari experiences that transcend the ordinary. Whether you&lsquo;re seeking your first African wildlife encounter, an adrenaline-fueled adventure, serene relaxation, or a special occasion like a honeymoon, our team creates personalized itineraries tailored to your preferences and budget.
-                            </p>
-                            <p className="text-gray-600 leading-relaxed">
-                                We invite you to embark on a journey of discovery across the breathtaking landscapes of Uganda and beyond. Your adventure begins here with us.
-                            </p>
+                        <h2 className="text-4xl lg:text-5xl font-serif font-bold text-brand-charcoal mb-12">
+                            {siteConfig.about.story.title}
+                        </h2>
+                        <div className="grid lg:grid-cols-2 gap-16 items-start">
+                            <div className="space-y-8">
+                                <p className="text-brand-charcoal leading-relaxed italic text-2xl font-serif border-l-8 border-brand-gold pl-8 py-4 bg-brand-bone/30 rounded-r-2xl">
+                                    {siteConfig.about.story.paragraphs[0]}
+                                </p>
+                                <p className="text-brand-charcoal/70 text-lg font-light leading-loose">
+                                    {siteConfig.about.story.paragraphs[1]}
+                                </p>
+                            </div>
+                            <div className="space-y-8">
+                                <p className="text-brand-charcoal/70 text-lg font-light leading-loose">
+                                    {siteConfig.about.story.paragraphs[2]}
+                                </p>
+                                <p className="text-brand-charcoal/70 text-lg font-light leading-loose">
+                                    {siteConfig.about.story.paragraphs[3]}
+                                </p>
+                                <div className="pt-6">
+                                    <div className="flex items-center gap-4">
+                                        <div className="w-12 h-12 rounded-full border border-brand-gold/30 flex items-center justify-center text-brand-gold">
+                                            <FontAwesomeIcon icon={faGem} />
+                                        </div>
+                                        <div>
+                                            <p className="font-serif font-bold text-brand-charcoal lowercase italic">Experience Excellence</p>
+                                            <p className="text-[10px] uppercase tracking-widest text-brand-gold font-bold">The Bush & Beyond Standard</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 {/* Our Values */}
-                <div className="mb-8">
-                    <div className="text-center mb-10">
-                        <div className="flex items-center justify-center gap-3 mb-4">
-                            <div className="w-12 h-1 bg-[#7AB730]"></div>
-                            <span className="text-[#7AB730] font-semibold uppercase tracking-wider text-sm">Our Values</span>
-                            <div className="w-12 h-1 bg-[#7AB730]"></div>
+                <div className="mb-24">
+                    <div className="text-center mb-20">
+                        <div className="flex items-center justify-center gap-6 mb-6">
+                            <div className="w-16 h-[1px] bg-brand-gold"></div>
+                            <span className="text-brand-gold font-bold uppercase tracking-[0.3em] text-[10px]">The Soul of Our Journey</span>
+                            <div className="w-16 h-[1px] bg-brand-gold"></div>
                         </div>
-                        <h2 className="text-3xl font-bold text-[#212121]">What Drives Us</h2>
+                        <h2 className="text-5xl font-serif font-bold text-brand-charcoal italic">Core Values</h2>
                     </div>
 
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {values.map((value, i) => (
-                            <div key={i} className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
-                                <div className="w-14 h-14 bg-[#7AB730]/10 rounded-lg flex items-center justify-center text-[#7AB730] mb-4">
-                                    {value.icon}
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+                        {siteConfig.about.values.map((value, i) => (
+                            <div key={i} className="bg-white rounded-2xl shadow-lg p-10 hover:shadow-2xl transition-all duration-500 border-b border-brand-charcoal/5 group relative overflow-hidden">
+                                <div className="absolute top-0 left-0 w-2 h-0 bg-brand-gold group-hover:h-full transition-all duration-500"></div>
+                                <div className="w-20 h-20 bg-brand-bone text-brand-charcoal rounded-2xl flex items-center justify-center mb-8 transition-all duration-500 group-hover:bg-brand-gold group-hover:text-brand-charcoal shadow-inner transform group-hover:rotate-6">
+                                    <FontAwesomeIcon icon={valueIcons[value.icon]} className="text-3xl" />
                                 </div>
-                                <h3 className="text-xl font-bold text-[#212121] mb-3">{value.title}</h3>
-                                <p className="text-gray-600 text-sm leading-relaxed">{value.description}</p>
+                                <h3 className="text-2xl font-serif font-bold text-brand-charcoal mb-6 group-hover:text-brand-gold transition-colors">{value.title}</h3>
+                                <p className="text-brand-charcoal/60 text-sm font-light leading-relaxed group-hover:text-brand-charcoal/80 transition-colors">{value.description}</p>
                             </div>
                         ))}
                     </div>
                 </div>
 
                 {/* Mission & Vision */}
-                <div className="grid md:grid-cols-2 gap-6 mb-8">
-                    <div className="bg-[#212121] rounded-lg shadow-md p-8 text-white">
-                        <div className="w-14 h-14 bg-[#7AB730] rounded-lg flex items-center justify-center mb-6">
-                            <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+                <div className="grid lg:grid-cols-2 gap-10 mb-24">
+                    <div className="bg-brand-charcoal rounded-3xl shadow-2xl p-12 lg:p-16 text-white relative overflow-hidden group border border-white/5">
+                        <div className="absolute top-0 right-0 p-12 opacity-5 transition-transform duration-700 group-hover:scale-125 group-hover:rotate-12 translate-x-1/4 -translate-y-1/4">
+                            <FontAwesomeIcon icon={faPaperPlane} className="text-[200px]" />
                         </div>
-                        <h3 className="text-2xl font-bold mb-4">Our Mission</h3>
-                        <p className="text-gray-300 leading-relaxed">
-                            To create extraordinary safari experiences that transcend the ordinary by blending extensive regional knowledge, personalized service, and a commitment to sustainability. Our goal is to craft memorable adventures that inspire, educate, and delight our clients while fostering respect for the environment and local communities.
+                        <div className="w-16 h-16 bg-brand-gold/10 rounded-xl flex items-center justify-center mb-10 border border-brand-gold/20 backdrop-blur-sm">
+                            <FontAwesomeIcon icon={faPaperPlane} className="text-brand-gold text-2xl" />
+                        </div>
+                        <h3 className="text-3xl lg:text-4xl font-serif font-bold mb-8 text-brand-gold underline decoration-brand-gold/30 underline-offset-8">Our Mission</h3>
+                        <p className="text-white/70 leading-relaxed font-light text-xl italic lg:max-w-md">
+                            "{siteConfig.about.mission}"
                         </p>
                     </div>
-                    <div className="bg-gradient-to-br from-[#7AB730] to-[#5a8a20] rounded-lg shadow-md p-8 text-white">
-                        <div className="w-14 h-14 bg-white/20 rounded-lg flex items-center justify-center mb-6">
-                            <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" /></svg>
+                    <div className="bg-brand-gold rounded-3xl shadow-2xl p-12 lg:p-16 text-brand-charcoal relative overflow-hidden group border border-brand-charcoal/5">
+                        <div className="absolute top-0 right-0 p-12 opacity-5 transition-transform duration-700 group-hover:scale-125 group-hover:-rotate-12 translate-x-1/4 -translate-y-1/4">
+                            <FontAwesomeIcon icon={faGlobeAfrica} className="text-[200px]" />
                         </div>
-                        <h3 className="text-2xl font-bold mb-4">Our Vision</h3>
-                        <p className="text-white/90 leading-relaxed">
-                            To be a leading catalyst for sustainable tourism in East Africa, creating unparalleled safari experiences that not only showcase the natural and cultural wonders of the region but also drive conservation efforts and community empowerment for generations to come.
+                        <div className="w-16 h-16 bg-brand-charcoal/10 rounded-xl flex items-center justify-center mb-10 border border-brand-charcoal/20 backdrop-blur-sm">
+                            <FontAwesomeIcon icon={faGlobeAfrica} className="text-brand-charcoal text-2xl" />
+                        </div>
+                        <h3 className="text-3xl lg:text-4xl font-serif font-bold mb-8 italic">Our Vision</h3>
+                        <p className="text-brand-charcoal/80 leading-relaxed font-bold text-xl lg:max-w-md">
+                            {siteConfig.about.vision}
                         </p>
                     </div>
                 </div>
 
                 {/* CTA */}
-                <div className="relative overflow-hidden bg-gray-100 rounded-xl p-8 text-center">
-                    <div className="absolute top-0 right-0 w-64 h-64 bg-[#7AB730]/10 rounded-full -translate-y-1/2 translate-x-1/2"></div>
-                    <div className="absolute bottom-0 left-0 w-48 h-48 bg-[#7AB730]/10 rounded-full translate-y-1/2 -translate-x-1/2"></div>
-                    <div className="relative">
-                        <h3 className="text-2xl font-bold text-[#212121] mb-4">Ready to Start Your Adventure?</h3>
-                        <p className="text-gray-600 mb-6 max-w-xl mx-auto">
-                            Let us craft your perfect East African safari. Contact our team today and begin planning the journey of a lifetime.
+                <div className="relative overflow-hidden bg-brand-charcoal rounded-[3rem] p-16 lg:p-24 text-center border border-white/5 shadow-3xl">
+                    <div className="absolute inset-0 opacity-30" style={{ backgroundImage: 'radial-gradient(circle, #D4AF37 0.5px, transparent 0.5px)', backgroundSize: '40px 40px' }}></div>
+                    <div className="relative z-10">
+                        <h3 className="text-5xl lg:text-6xl font-serif font-bold text-white mb-8 italic">Your Legacy Adventure<br /><span className="text-brand-gold underline decoration-brand-gold/30 underline-offset-[12px]">Starts Here</span></h3>
+                        <p className="text-white/60 mb-12 max-w-2xl mx-auto text-xl font-light leading-relaxed">
+                            Every great story begins with a single step. Let us curate yours in the heart of the wild.
                         </p>
-                        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                            <Link href="/contact" className="bg-[#7AB730] text-white px-8 py-3 rounded-lg font-bold hover:bg-[#6a9e2a] transition-colors">
-                                Plan Your Safari
+                        <div className="flex flex-col sm:flex-row gap-8 justify-center items-center">
+                            <Link href="/contact" className="bg-brand-gold text-brand-charcoal px-12 py-5 rounded-full font-bold hover:bg-white transition-all duration-500 uppercase tracking-[0.2em] text-xs shadow-2xl hover:shadow-brand-gold/20 group">
+                                Begin Your Safari <FontAwesomeIcon icon={faPaperPlane} className="ml-2 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
                             </Link>
-                            <Link href="/contact" className="bg-[#212121] text-white px-8 py-3 rounded-lg font-bold hover:bg-[#333] transition-colors">
-                                Contact Us
+                            <Link href="/contact" className="text-white border-b-2 border-brand-gold/0 hover:border-brand-gold py-2 font-bold transition-all duration-500 uppercase tracking-[0.2em] text-xs">
+                                Speak with a Consultant
                             </Link>
                         </div>
                     </div>

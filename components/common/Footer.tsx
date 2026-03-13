@@ -57,8 +57,8 @@ const Footer: React.FC = () => {
                     <div className="flex flex-wrap -mx-4">
                         {/* Brand & Social */}
                         <div className="w-full lg:w-4/12 md:w-1/2 px-4 mb-12">
-                            <a href="#" className="inline-block mb-2">
-                                <h1 className="text-[1.5rem] font-bold leading-[1.2] bg-gradient-to-r from-[#7AB730] to-[#527a20] bg-clip-text text-transparent mb-2">
+                            <a href="#" className="inline-block mb-2 text-brand-gold">
+                                <h1 className="text-[1.5rem] font-serif font-bold leading-[1.2] mb-2">
                                     {siteConfig.company.name}
                                 </h1>
                             </a>
@@ -100,21 +100,14 @@ const Footer: React.FC = () => {
                                 Our Services
                             </h5>
                             <div className="flex flex-col justify-start">
-                                {[
-                                    "About",
-                                    "Destinations",
-                                    "Safari Packages",
-                                    "Luxury Lodges",
-                                    "Guided Tours",
-                                    "Testimonials",
-                                ].map((item, i) => (
+                                {siteConfig.footer.services.map((link, i) => (
                                     <a
                                         key={i}
                                         className="text-white/50 mb-2 no-underline hover:text-white transition-colors"
-                                        href="#"
+                                        href={link.href}
                                     >
                                         <FontAwesomeIcon icon={faAngleRight} className="mr-2" />
-                                        {item}
+                                        {link.label}
                                     </a>
                                 ))}
                             </div>
@@ -128,15 +121,15 @@ const Footer: React.FC = () => {
                                 Useful Links
                             </h5>
                             <div className="flex flex-col justify-start">
-                                {["About", "Destinations", "Services", "Packages", "Guides", "Blog"].map(
-                                    (item, i) => (
+                                {siteConfig.footer.usefulLinks.map(
+                                    (link, i) => (
                                         <a
                                             key={i}
                                             className="text-white/50 mb-2 no-underline hover:text-white transition-colors"
-                                            href="#"
+                                            href={link.href}
                                         >
                                             <FontAwesomeIcon icon={faAngleRight} className="mr-2" />
-                                            {item}
+                                            {link.label}
                                         </a>
                                     )
                                 )}
@@ -150,21 +143,24 @@ const Footer: React.FC = () => {
                             >
                                 Contact Us
                             </h5>
-                            <p className="text-white/50 mb-4">
-                                <FontAwesomeIcon icon={faMapMarkerAlt} className="mr-2" />
+                            <p className="text-white/60 mb-4">
+                                <FontAwesomeIcon icon={faMapMarkerAlt} className="mr-2 text-brand-gold" />
                                 {siteConfig.contacts.location}
                             </p>
-                            <p className="text-white/50 mb-4">
-                                <FontAwesomeIcon icon={faPhoneAlt} className="mr-2" />
+                            <p className="text-white/60 mb-4">
+                                <FontAwesomeIcon icon={faPhoneAlt} className="mr-2 text-brand-gold" />
                                 {siteConfig.contacts.phoneNumber}
                             </p>
-                            <p className="text-white/50 mb-4">
-                                <FontAwesomeIcon icon={faEnvelope} className="mr-2" />
+                            <p className="text-white/60 mb-4">
+                                <FontAwesomeIcon icon={faEnvelope} className="mr-2 text-brand-gold" />
                                 {siteConfig.contacts.email}
+                            </p>
+                            <p className="text-white/50 mb-4">
+                                {siteConfig.contacts.poBox}
                             </p>
 
                             <h6
-                                className="text-white uppercase mt-6 mb-4 text-base font-medium tracking-[5px]"
+                                className="text-white uppercase mt-6 mb-4 text-sm font-semibold tracking-[4px]"
                             >
                                 Newsletter
                             </h6>
@@ -172,25 +168,25 @@ const Footer: React.FC = () => {
                                 <div className="flex">
                                     <input
                                         type="email"
-                                        className="flex-1 border border-[#FFFFFF] bg-transparent text-white placeholder:text-white/50 px-4 py-[15px] outline-none focus:border-[#b8e087] focus:shadow-[0_0_0_0.2rem_rgba(122,183,48,0.25)] transition-all"
-                                        placeholder="Your Email"
+                                        className="flex-1 border border-white/20 bg-white/5 text-white placeholder:text-white/40 px-4 py-[15px] outline-none focus:border-brand-gold transition-all"
+                                        placeholder="Your Email Address"
                                         value={email}
                                         onChange={handleChange}
                                         required
                                     />
                                     <button
                                         type="submit"
-                                        className="bg-[#7AB730] text-white border border-[#7AB730] px-4 font-normal text-center leading-[1.5] transition-all duration-150 hover:bg-[#669928] hover:border-[#5f8f25] focus:shadow-[0_0_0_0.2rem_rgba(142,194,79,0.5)] disabled:opacity-65"
+                                        className="bg-brand-gold text-brand-green px-6 font-bold text-sm uppercase tracking-wider transition-all duration-150 hover:bg-white hover:text-brand-green disabled:opacity-65"
                                         disabled={loading}
                                     >
                                         {loading ? (
                                             <span
-                                                className="inline-block w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"
+                                                className="inline-block w-4 h-4 border-2 border-brand-green border-t-transparent rounded-full animate-spin"
                                                 role="status"
                                                 aria-hidden="true"
                                             />
                                         ) : (
-                                            "Sign Up"
+                                            "Join"
                                         )}
                                     </button>
                                 </div>

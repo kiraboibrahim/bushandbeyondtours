@@ -1,5 +1,5 @@
 import ServicePage from "../services";
-import services from "../data";
+import siteConfig from "../../siteConfig";
 
-const CarRentalsPage = () => <ServicePage service={services.carRentals} />;
+const CarRentalsPage = () => <ServicePage service={siteConfig.services.carRentals} />;
 export default CarRentalsPage;

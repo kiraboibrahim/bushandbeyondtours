@@ -1,89 +1,56 @@
 import Image from "next/image";
 import { Destination } from "@/models/Destination";
 
-const destinations: Destination[] = [
-    {
-        id: 1,
-        name: "Munyaga Waterfalls",
-        location: "Bwindi Impenetrable National Park",
-        attractionsCount: 50,
-        image: "/img/waterfall.jpeg",
-    },
-    {
-        id: 2,
-        name: "Bwindi Impenetrable National Park",
-        location: "South western Uganda",
-        attractionsCount: 30,
-        image: "/img/tourist-with-gorilla.jpeg",
-    },
-    {
-        id: 3,
-        name: "Kidepo Valley National Park",
-        location: "Northeastern Uganda",
-        attractionsCount: 25,
-        image: "/img/elephant-crowd.jpeg",
-    },
-    {
-        id: 4,
-        name: "Bwindi Impenetrable National Park",
-        location: "South Western Uganda",
-        attractionsCount: 15,
-        image: "/img/tourist-swimming.jpeg",
-    },
-    {
-        id: 5,
-        name: "Ishasha",
-        location: "Queen Elizabeth National Park",
-        attractionsCount: 20,
-        image: "/img/tourist-trek.jpeg",
-    },
-    {
-        id: 6,
-        name: "Murchison Waterfalls",
-        location: "Eastern Uganda",
-        attractionsCount: 10,
-        image: "/img/boat-cruise-murchison-falls.jpg",
-    },
-];
+import siteConfig from "@/app/siteConfig";
 
-const DestinationSection = () => (
-    <div className="w-full py-5" id="destinations">
-        <div className="max-w-[1140px] mx-auto px-[15px] pt-5 pb-3 text-center">
-            <h6
-                className="text-[#7AB730] uppercase mb-2 text-base font-medium leading-[1.2]"
-                style={{ letterSpacing: 5 }}
-            >
-                Destination
-            </h6>
-            <h1 className="mb-2 text-[2.5rem] max-[1200px]:text-[calc(1.375rem_+_1.5vw)] font-medium leading-[1.2] text-[#212121]">
-                Explore Top Destinations in Uganda
-            </h1>
-            <div className="flex flex-wrap -mx-[15px]">
-                {destinations.map((dest) => (
-                    <div key={dest.id} className="lg:w-1/3 md:w-1/2 w-full px-[15px] mb-4">
-                        <div className="group relative overflow-hidden mb-2">
-                            <Image
-                                src={dest.image}
-                                alt={dest.name}
-                                width={500}
-                                height={350}
-                                className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-[1.3]"
-                            />
-                            <a
-                                className="absolute top-[30px] right-[30px] bottom-[30px] left-[30px] flex flex-col items-center justify-center bg-[rgba(0,0,0,0.3)] border border-[rgba(255,255,255,0.5)] transition-all duration-500 z-[1] text-white no-underline group-hover:top-0 group-hover:right-0 group-hover:bottom-0 group-hover:left-0 group-hover:border-[30px]"
-                                href="#"
-                            >
-                                <h5 className="text-white mb-2 text-[1.25rem] font-medium leading-[1.2]">
-                                    {dest.name}
-                                </h5>
-                                <span>{dest.attractionsCount} Attractions</span>
-                            </a>
+const DestinationSection = () => {
+    const destinations = siteConfig.home.destinations.list.map(dest => ({
+        ...dest,
+        image: (siteConfig.images.destinations as any)[dest.imageKey]
+    }));
+
+    return (
+        <div className="w-full py-5" id="destinations">
+            <div className="max-w-[1140px] mx-auto px-[15px] pt-5 pb-3 text-center">
+                <h6
+                    className="text-brand-gold uppercase mb-2 text-sm font-bold tracking-[4px]"
+                >
+                    {siteConfig.home.destinations.badge}
+                </h6>
+                <h1 className="mb-4 text-[2.5rem] max-[1200px]:text-[calc(1.375rem_+_1.5vw)] font-serif font-bold leading-[1.2] text-brand-green">
+                    {siteConfig.home.destinations.title}
+                </h1>
+                <div className="flex flex-wrap -mx-[15px] pt-8">
+                    {destinations.map((dest) => (
+                        <div key={dest.id} className="lg:w-1/3 md:w-1/2 w-full px-[15px] mb-8">
+                            <div className="group relative overflow-hidden rounded-lg shadow-sm">
+                                <Image
+                                    src={dest.image}
+                                    alt={dest.name}
+                                    width={500}
+                                    height={350}
+                                    className="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-brand-green/90 via-brand-green/20 to-transparent flex flex-col items-center justify-end pb-10 px-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                                    <h5 className="text-white mb-2 text-xl font-serif font-bold leading-tight text-center">
+                                        {dest.name}
+                                    </h5>
+                                    <span className="text-brand-gold text-xs font-bold uppercase tracking-widest">
+                                        {dest.attractionsCount} Attractions
+                                    </span>
+                                </div>
+                                <div className="absolute bottom-6 left-6 text-white group-hover:opacity-0 transition-opacity duration-300">
+                                    <h5 className="text-white mb-0 text-lg font-serif font-bold leading-tight drop-shadow-md">
+                                        {dest.name}
+                                    </h5>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                ))}
+                    ))}
+                </div>
             </div>
         </div>
-    </div>
-);
+    );
+};
 
 export default DestinationSection;

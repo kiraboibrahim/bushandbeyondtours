@@ -5,19 +5,19 @@ import Link from "next/link";
 import siteConfig from "@/app/siteConfig";
 
 const Topbar = () => (
-    <div className="w-full bg-white pt-3 hidden lg:block">
+    <div className="w-full bg-brand-green pt-3 hidden lg:block text-brand-bone/80">
         <div className="max-w-[1140px] mx-auto px-[15px]">
             <div className="flex flex-wrap -mx-[15px]">
                 <div className="lg:w-2/3 w-full px-[15px] text-center lg:text-left mb-2 lg:mb-0">
                     <div className="inline-flex items-center">
-                        <p className="m-0">
-                            <FontAwesomeIcon icon={faEnvelope} className="mr-2 text-[#7AB730] hover:text-[#527a20]" />
-                            <span className="font-semibold text-[#212121] text-sm">{siteConfig.contacts.email}</span>
+                        <p className="m-0 flex items-center">
+                            <FontAwesomeIcon icon={faEnvelope} className="mr-2 text-brand-gold hover:text-white transition-colors" />
+                            <span className="font-medium text-sm tracking-wide">{siteConfig.contacts.email}</span>
                         </p>
-                        <p className="text-[#656565] px-3 m-0">|</p>
-                        <p className="m-0">
-                            <FontAwesomeIcon icon={faPhoneAlt} className="mr-2 text-[#7AB730] hover:text-[#527a20]" />
-                            <span className="font-semibold text-[#212121] text-sm">{siteConfig.contacts.phoneNumber}</span>
+                        <p className="text-white/20 px-3 m-0">|</p>
+                        <p className="m-0 flex items-center">
+                            <FontAwesomeIcon icon={faPhoneAlt} className="mr-2 text-brand-gold hover:text-white transition-colors" />
+                            <span className="font-medium text-sm tracking-wide">{siteConfig.contacts.phoneNumber}</span>
                         </p>
                     </div>
                 </div>
@@ -42,9 +42,9 @@ const Topbar = () => (
                                     href={(siteConfig.socials as any)[key]}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="text-[#7AB730] px-3 hover:text-[#527a20] hover:underline"
+                                    className="text-brand-bone/60 px-3 hover:text-brand-gold transition-colors"
                                 >
-                                    <FontAwesomeIcon icon={icon} />
+                                    <FontAwesomeIcon icon={icon} className="text-sm" />
                                 </Link>
                             ))}
                     </div>

@@ -1,5 +1,5 @@
 import ServicePage from "../services";
-import services from "../data";
+import siteConfig from "../../siteConfig";
 
-const AirTicketingPage = () => <ServicePage service={services.airTicketing} />;
+const AirTicketingPage = () => <ServicePage service={siteConfig.services.airTicketing} />;
 export default AirTicketingPage;

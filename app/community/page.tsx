@@ -1,215 +1,219 @@
+"use client";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUsers, faComments, faHeart, faCamera, faGlobe, faQuoteLeft, faPaperPlane, faUserFriends, faMapMarkedAlt } from "@fortawesome/free-solid-svg-icons";
-import { faFacebookF, faTwitter, faInstagram, faLinkedinIn, faYoutube, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
+import {
+    faUsers,
+    faComments,
+    faHeart,
+    faCamera,
+    faGlobe,
+    faQuoteLeft,
+    faPaperPlane,
+    faUserFriends,
+    faMapMarkedAlt,
+    faShieldAlt,
+    faLock,
+    faHeadset
+} from "@fortawesome/free-solid-svg-icons";
+import {
+    faFacebookF,
+    faTwitter,
+    faInstagram,
+    faLinkedinIn,
+    faYoutube,
+    faWhatsapp
+} from "@fortawesome/free-brands-svg-icons";
 import Link from "next/link";
 import siteConfig from "../siteConfig";
 
+const iconMap: { [key: string]: any } = {
+    "users": faUsers,
+    "map-marked-alt": faMapMarkedAlt,
+    "camera": faCamera,
+    "globe": faGlobe,
+    "comments": faComments,
+    "user-friends": faUserFriends,
+    "shield-alt": faShieldAlt,
+    "lock": faLock,
+    "headset": faHeadset
+};
+
 const CommunityPage = () => {
     const socialLinks = [
-        { icon: faFacebookF, url: "#", name: "Facebook", followers: "12K", color: "hover:bg-blue-600" },
-        { icon: faInstagram, url: "#", name: "Instagram", followers: "8.5K", color: "hover:bg-pink-600" },
-        { icon: faTwitter, url: "#", name: "Twitter", followers: "5.2K", color: "hover:bg-sky-500" },
-        { icon: faYoutube, url: "#", name: "YouTube", followers: "3.1K", color: "hover:bg-red-600" },
-        { icon: faLinkedinIn, url: "#", name: "LinkedIn", followers: "2.8K", color: "hover:bg-blue-700" },
-        { icon: faWhatsapp, url: "#", name: "WhatsApp", followers: "Join", color: "hover:bg-green-600" },
-    ];
-
-    const communityStats = [
-        { icon: faUsers, num: "5,000+", label: "Community Members" },
-        { icon: faMapMarkedAlt, num: "500+", label: "Safaris Completed" },
-        { icon: faCamera, num: "2,000+", label: "Photos Shared" },
-        { icon: faGlobe, num: "45+", label: "Countries Reached" }
-    ];
-
-    const testimonials = [
-        {
-            name: "Sarah Mitchell",
-            location: "United States",
-            text: `The gorilla trekking experience was absolutely life-changing. ${siteConfig.company.name} made everything seamless from start to finish!`,
-            safari: "3-Day Gorilla Safari"
-        },
-        {
-            name: "James & Emma",
-            location: "United Kingdom",
-            text: "Our honeymoon safari exceeded all expectations. The team's attention to detail made it truly special.",
-            safari: "8-Day Uganda Safari"
-        },
-        {
-            name: "Klaus Weber",
-            location: "Germany",
-            text: "Professional, knowledgeable guides and incredible wildlife encounters. Highly recommend!",
-            safari: "6-Day Gorilla & Chimp Safari"
-        }
-    ];
-
-    const engagementOptions = [
-        {
-            icon: faComments,
-            title: "Community Forum",
-            description: "Engage in discussions, share tips, and connect with fellow travelers who share your passion for African wildlife.",
-            buttonText: "Join Discussions",
-            color: "bg-[#212121]",
-            href: "#"
-        },
-        {
-            icon: faCamera,
-            title: "Photo Gallery",
-            description: "Share your safari moments and browse stunning wildlife photography from our community members.",
-            buttonText: "View Gallery",
-            color: "bg-gradient-to-br from-[#7AB730] to-[#5a8a20]",
-            href: "/#gallery"
-        },
-        {
-            icon: faUserFriends,
-            title: "Travel Buddies",
-            description: "Find travel companions for group safaris and share costs while making new friends.",
-            buttonText: "Find Buddies",
-            color: "bg-[#212121]",
-            href: "#"
-        }
+        { icon: faFacebookF, url: siteConfig.socials.facebook, name: "Facebook", followers: "12K", color: "hover:bg-brand-green" },
+        { icon: faInstagram, url: siteConfig.socials.instagram, name: "Instagram", followers: "8.5K", color: "hover:bg-brand-gold" },
+        { icon: faTwitter, url: siteConfig.socials.twitter, name: "Twitter", followers: "5.2K", color: "hover:bg-brand-green" },
+        { icon: faLinkedinIn, url: siteConfig.socials.linkedin, name: "LinkedIn", followers: "2.8K", color: "hover:bg-brand-gold" },
+        { icon: faWhatsapp, url: "#", name: "WhatsApp", followers: "Join", color: "hover:bg-brand-green" },
     ];
 
     return (
-        <div className="min-h-screen bg-gray-50 font-sans">
+        <div className="min-h-screen bg-brand-bone/30 font-sans selection:bg-brand-gold/30">
             {/* Hero */}
-            <div className="relative h-96 bg-gradient-to-br from-[#212121] via-[#2d2d2d] to-[#212121] overflow-hidden">
-                <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%239C92AC" fill-opacity="0.15"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")' }}></div>
-                <div className="absolute inset-0 flex flex-col justify-center items-center text-white text-center px-4">
-                    <div className="bg-[#7AB730] text-white text-xs font-bold px-4 py-1 rounded-full mb-4">JOIN THE ADVENTURE</div>
-                    <p className="text-[#7AB730] font-semibold tracking-widest uppercase mb-2">{siteConfig.company.name}</p>
-                    <h1 className="text-4xl md:text-5xl font-bold mb-4">Our Community</h1>
-                    <p className="text-gray-300 max-w-2xl">Connect with fellow travelers, share experiences, and become part of our growing safari family</p>
+            <div className="relative h-[60vh] bg-brand-charcoal overflow-hidden">
+                <div className="absolute inset-0 z-0">
+                    <div className="absolute inset-0 bg-gradient-to-b from-brand-charcoal/40 via-transparent to-brand-charcoal z-10"></div>
+                    <div className="absolute inset-0 bg-brand-charcoal/20 z-10"></div>
                 </div>
+                <div className="absolute inset-0 flex flex-col justify-center items-center text-white text-center px-4 z-20">
+                    <div className="bg-brand-gold text-brand-charcoal text-[10px] uppercase font-bold px-4 py-1.5 rounded-full mb-6 tracking-widest shadow-lg">
+                        JOIN THE ADVENTURE
+                    </div>
+                    <h1 className="text-5xl md:text-7xl font-serif mb-6 leading-tight drop-shadow-2xl">
+                        Our <span className="text-brand-gold">Community</span>
+                    </h1>
+                    <p className="text-brand-bone/80 max-w-2xl text-lg font-light leading-relaxed">
+                        Connect with fellow travelers, share unforgettable experiences, and become part of the <span className="font-medium text-brand-gold">{siteConfig.company.name}</span> family.
+                    </p>
+                </div>
+                <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-brand-bone/30 to-transparent z-10"></div>
             </div>
 
-            <div className="max-w-6xl mx-auto px-4 py-12">
+            <div className="max-w-7xl mx-auto px-4 py-12 relative -mt-24 z-30">
                 {/* Community Stats Bar */}
-                <div className="bg-white rounded-xl shadow-lg p-6 -mt-16 relative z-10 mb-12">
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-                        {communityStats.map((stat, i) => (
-                            <div key={i} className="text-center">
-                                <div className="w-12 h-12 bg-[#7AB730]/10 rounded-full flex items-center justify-center text-[#7AB730] mx-auto mb-3">
-                                    <FontAwesomeIcon icon={stat.icon} className="text-lg" />
+                <div className="bg-white/80 backdrop-blur-md rounded-2xl shadow-2xl p-8 mb-16 border border-brand-gold/10">
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+                        {siteConfig.community.stats.map((stat, i) => (
+                            <div key={i} className="text-center group">
+                                <div className="w-16 h-16 bg-brand-green/5 rounded-2xl flex items-center justify-center text-brand-green mx-auto mb-4 group-hover:bg-brand-green group-hover:text-white transition-all duration-500 shadow-sm group-hover:shadow-brand-green/20 group-hover:-translate-y-1">
+                                    <FontAwesomeIcon icon={iconMap[stat.icon]} className="text-2xl" />
                                 </div>
-                                <p className="font-bold text-[#212121] text-2xl">{stat.num}</p>
-                                <p className="text-xs text-gray-500 mt-1">{stat.label}</p>
+                                <p className="font-serif font-bold text-brand-charcoal text-3xl mb-1">{stat.num}</p>
+                                <p className="text-[11px] uppercase tracking-widest text-brand-charcoal/50 font-bold">{stat.label}</p>
                             </div>
                         ))}
                     </div>
                 </div>
 
                 {/* Social Media & Newsletter Row */}
-                <div className="grid md:grid-cols-2 gap-8 mb-12">
+                <div className="grid lg:grid-cols-5 gap-8 mb-20">
                     {/* Follow Us */}
-                    <div className="bg-white rounded-lg shadow-md p-8">
-                        <div className="flex items-center gap-3 mb-6">
-                            <div className="w-10 h-1 bg-[#7AB730]"></div>
-                            <span className="text-[#7AB730] font-semibold uppercase tracking-wider text-sm">Connect With Us</span>
+                    <div className="lg:col-span-3 bg-white rounded-2xl shadow-xl p-10 border border-brand-gold/5 flex flex-col justify-between">
+                        <div>
+                            <div className="flex items-center gap-3 mb-6">
+                                <div className="w-10 h-0.5 bg-brand-gold"></div>
+                                <span className="text-brand-gold font-bold uppercase tracking-[0.2em] text-[10px]">SOCIAL CONNECTIONS</span>
+                            </div>
+                            <h2 className="text-4xl font-serif text-brand-charcoal mb-6 leading-tight">Follow Our <span className="italic">Adventures</span></h2>
+                            <p className="text-brand-charcoal/60 mb-8 max-w-xl text-lg font-light">
+                                Stay inspired with daily glimpses into the Pearl of Africa. From rare bird sightings to sunset savannah views, our social channels are your windows to the wild.
+                            </p>
                         </div>
-                        <h2 className="text-2xl font-bold text-[#212121] mb-6">Follow Our Adventures</h2>
-                        <p className="text-gray-600 mb-6">Stay updated with the latest safari stories, wildlife photos, and travel inspiration across our social channels.</p>
 
-                        <div className="grid grid-cols-3 gap-3">
+                        <div className="grid grid-cols-2 sm:grid-cols-5 gap-4">
                             {socialLinks.map((link, i) => (
                                 <a
                                     key={i}
                                     href={link.url}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className={`flex flex-col items-center p-4 bg-gray-50 rounded-lg hover:text-white transition-all ${link.color}`}
+                                    className={`flex flex-col items-center p-6 bg-brand-bone/20 rounded-xl transition-all duration-500 border border-transparent hover:border-brand-gold/20 hover:text-white group ${link.color}`}
                                 >
-                                    <FontAwesomeIcon icon={link.icon} className="text-xl mb-2" />
-                                    <span className="text-xs font-medium">{link.name}</span>
-                                    <span className="text-xs text-gray-400 mt-1">{link.followers}</span>
+                                    <FontAwesomeIcon icon={link.icon} className="text-2xl mb-3 text-brand-charcoal group-hover:text-white transition-colors" />
+                                    <span className="text-[10px] uppercase tracking-widest font-bold text-brand-charcoal group-hover:text-white">{link.name}</span>
+                                    <span className="text-[10px] text-brand-charcoal/40 group-hover:text-white/60 mt-1 font-medium">{link.followers}</span>
                                 </a>
                             ))}
                         </div>
                     </div>
 
                     {/* Newsletter */}
-                    <div className="bg-gradient-to-br from-[#7AB730] to-[#5a8a20] rounded-lg shadow-md p-8 text-white">
-                        <div className="flex items-center gap-3 mb-6">
-                            <div className="w-10 h-1 bg-white/50"></div>
-                            <span className="text-white/80 font-semibold uppercase tracking-wider text-sm">Stay Updated</span>
-                        </div>
-                        <h2 className="text-2xl font-bold mb-4">Join Our Newsletter</h2>
-                        <p className="text-white/80 mb-6">Get exclusive offers, travel tips, and safari stories delivered straight to your inbox. No spam, just adventure!</p>
+                    <div className="lg:col-span-2 bg-brand-green rounded-2xl shadow-xl p-10 text-white relative overflow-hidden group">
+                        <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 group-hover:scale-110 transition-transform duration-700"></div>
+                        <div className="relative z-10 flex flex-col h-full">
+                            <div className="flex items-center gap-3 mb-6">
+                                <div className="w-10 h-0.5 bg-brand-gold"></div>
+                                <span className="text-brand-gold font-bold uppercase tracking-[0.2em] text-[10px]">EXCLUSIVE INSIGHTS</span>
+                            </div>
+                            <h2 className="text-4xl font-serif mb-6 leading-tight">The Safari <span className="italic">Dispatch</span></h2>
+                            <p className="text-brand-bone/80 mb-8 font-light text-lg leading-relaxed">
+                                Curated safari news, seasonal wildlife migrations, and exclusive member offers delivered to your inbox.
+                            </p>
 
-                        <div className="space-y-4">
-                            <div>
-                                <input
-                                    type="text"
-                                    placeholder="Your Name"
-                                    className="w-full bg-white/10 border border-white/20 rounded-lg p-3 text-white placeholder-white/50 outline-none focus:border-white/50 transition"
-                                />
+                            <div className="space-y-4 mt-auto">
+                                <div className="group/input">
+                                    <input
+                                        type="text"
+                                        placeholder="Full Name"
+                                        className="w-full bg-white/10 border border-white/20 rounded-xl p-4 text-white placeholder-white/30 outline-none focus:border-brand-gold/50 focus:bg-white/20 transition-all font-light"
+                                    />
+                                </div>
+                                <div className="group/input">
+                                    <input
+                                        type="email"
+                                        placeholder="Email Address"
+                                        className="w-full bg-white/10 border border-white/20 rounded-xl p-4 text-white placeholder-white/30 outline-none focus:border-brand-gold/50 focus:bg-white/20 transition-all font-light"
+                                    />
+                                </div>
+                                <button className="w-full bg-brand-gold text-brand-charcoal font-bold py-4 rounded-xl hover:bg-white transition-all duration-300 flex items-center justify-center gap-3 shadow-lg shadow-brand-gold/10 group/btn translate-y-2">
+                                    <FontAwesomeIcon icon={faPaperPlane} className="group-hover/btn:translate-x-1 transition-transform" />
+                                    SUBSCRIBE NOW
+                                </button>
                             </div>
-                            <div>
-                                <input
-                                    type="email"
-                                    placeholder="Your Email Address"
-                                    className="w-full bg-white/10 border border-white/20 rounded-lg p-3 text-white placeholder-white/50 outline-none focus:border-white/50 transition"
-                                />
-                            </div>
-                            <button className="w-full bg-white text-[#7AB730] font-bold py-3 rounded-lg hover:bg-gray-100 transition-colors flex items-center justify-center gap-2">
-                                <FontAwesomeIcon icon={faPaperPlane} />
-                                Subscribe Now
-                            </button>
+                            <p className="text-white/40 text-[10px] uppercase font-bold text-center mt-6 tracking-widest">JOIN 3,000+ EXPLORERS</p>
                         </div>
-                        <p className="text-white/60 text-xs mt-4 text-center">Join 3,000+ subscribers. Unsubscribe anytime.</p>
                     </div>
                 </div>
 
-                {/* Community Engagement Options */}
-                <div className="mb-12">
-                    <div className="text-center mb-10">
-                        <div className="flex items-center justify-center gap-3 mb-4">
-                            <div className="w-12 h-1 bg-[#7AB730]"></div>
-                            <span className="text-[#7AB730] font-semibold uppercase tracking-wider text-sm">Get Involved</span>
-                            <div className="w-12 h-1 bg-[#7AB730]"></div>
+                {/* Ways to Engage */}
+                <div className="mb-24">
+                    <div className="text-center mb-16">
+                        <div className="flex items-center justify-center gap-4 mb-4">
+                            <div className="w-12 h-0.5 bg-brand-gold"></div>
+                            <span className="text-brand-gold font-bold uppercase tracking-[0.3em] text-[10px]">COMMUNITY PILLARS</span>
+                            <div className="w-12 h-0.5 bg-brand-gold"></div>
                         </div>
-                        <h2 className="text-3xl font-bold text-[#212121]">Ways to Engage</h2>
+                        <h2 className="text-5xl font-serif text-brand-charcoal leading-tight">Elevate Your <span className="italic">Presence</span></h2>
                     </div>
 
-                    <div className="grid md:grid-cols-3 gap-6">
-                        {engagementOptions.map((option, i) => (
-                            <div key={i} className={`${option.color} rounded-lg shadow-md p-8 text-white`}>
-                                <div className="w-14 h-14 bg-white/20 rounded-lg flex items-center justify-center mb-6">
-                                    <FontAwesomeIcon icon={option.icon} className="text-2xl" />
+                    <div className="grid md:grid-cols-3 gap-8">
+                        {siteConfig.community.engagement.map((option, i) => (
+                            <div key={i} className="bg-white border border-brand-charcoal/5 rounded-2xl shadow-lg p-10 hover:shadow-2xl hover:border-brand-gold/20 transition-all duration-500 group flex flex-col">
+                                <div className="w-16 h-16 bg-brand-bone/50 rounded-2xl flex items-center justify-center mb-8 border border-brand-bone group-hover:border-brand-gold/30 transition-all duration-500">
+                                    <FontAwesomeIcon icon={iconMap[option.icon]} className="text-3xl text-brand-charcoal group-hover:text-brand-gold transition-colors duration-500" />
                                 </div>
-                                <h3 className="text-xl font-bold mb-3">{option.title}</h3>
-                                <p className="text-white/80 text-sm mb-6">{option.description}</p>
-                                <Link href={option.href} className="w-full bg-white/20 hover:bg-white/30 text-white font-semibold py-3 rounded-lg transition-colors px-3">
-                                    {option.buttonText}
-                                </Link>
+                                <h3 className="text-2xl font-serif text-brand-charcoal mb-4 tracking-tight group-hover:text-brand-gold transition-colors duration-500">{option.title}</h3>
+                                <p className="text-brand-charcoal/60 text-base font-light mb-8 leading-relaxed italic">&quot;{option.description}&quot;</p>
+                                <div className="mt-auto">
+                                    <Link href={option.href} className="inline-flex items-center text-brand-charcoal font-bold text-xs uppercase tracking-widest group-hover:text-brand-gold transition-colors duration-300">
+                                        {option.buttonText}
+                                        <div className="w-8 h-px bg-brand-gold ml-4 group-hover:w-12 transition-all duration-500"></div>
+                                    </Link>
+                                </div>
                             </div>
                         ))}
                     </div>
                 </div>
 
                 {/* Testimonials */}
-                <div className="mb-12">
-                    <div className="text-center mb-10">
-                        <div className="flex items-center justify-center gap-3 mb-4">
-                            <div className="w-12 h-1 bg-[#7AB730]"></div>
-                            <span className="text-[#7AB730] font-semibold uppercase tracking-wider text-sm">Testimonials</span>
-                            <div className="w-12 h-1 bg-[#7AB730]"></div>
+                <div className="mb-24 relative overflow-hidden">
+                    <div className="text-center mb-16 relative z-10">
+                        <div className="flex items-center justify-center gap-4 mb-4">
+                            <div className="w-12 h-0.5 bg-brand-gold"></div>
+                            <span className="text-brand-gold font-bold uppercase tracking-[0.3em] text-[10px]">VOICES FROM THE WILD</span>
+                            <div className="w-12 h-0.5 bg-brand-gold"></div>
                         </div>
-                        <h2 className="text-3xl font-bold text-[#212121]">What Our Travelers Say</h2>
+                        <h2 className="text-5xl font-serif text-brand-charcoal leading-tight">Global <span className="italic">Accolades</span></h2>
                     </div>
 
-                    <div className="grid md:grid-cols-3 gap-6">
-                        {testimonials.map((testimonial, i) => (
-                            <div key={i} className="bg-white rounded-lg shadow-md p-6">
-                                <div className="text-[#7AB730] mb-4">
-                                    <FontAwesomeIcon icon={faQuoteLeft} className="text-2xl opacity-50" />
+                    <div className="grid md:grid-cols-3 gap-8 relative z-10">
+                        {siteConfig.community.testimonials.map((testimonial, i) => (
+                            <div key={i} className="bg-white rounded-2xl shadow-lg p-10 border border-brand-bone relative group hover:-translate-y-2 transition-transform duration-500">
+                                <div className="absolute -top-4 -left-4 text-brand-green/10 mb-6 group-hover:text-brand-gold/10 transition-colors duration-500">
+                                    <FontAwesomeIcon icon={faQuoteLeft} className="text-8xl" />
                                 </div>
-                                <p className="text-gray-600 mb-6 italic">&ldquo;{testimonial.text}&rdquo;</p>
-                                <div className="border-t border-gray-100 pt-4">
-                                    <p className="font-bold text-[#212121]">{testimonial.name}</p>
-                                    <p className="text-gray-500 text-sm">{testimonial.location}</p>
-                                    <span className="inline-block mt-2 bg-[#7AB730]/10 text-[#7AB730] text-xs px-3 py-1 rounded-full">
-                                        {testimonial.safari}
-                                    </span>
+                                <div className="relative z-10">
+                                    <p className="text-brand-charcoal/80 mb-8 italic text-lg font-light leading-relaxed font-serif">
+                                        &ldquo;{testimonial.text}&rdquo;
+                                    </p>
+                                    <div className="border-t border-brand-bone pt-6 flex items-center justify-between">
+                                        <div>
+                                            <p className="font-serif font-bold text-lg text-brand-charcoal">{testimonial.name}</p>
+                                            <p className="text-[10px] uppercase font-bold tracking-[0.15em] text-brand-charcoal/40 mt-1">{testimonial.location}</p>
+                                        </div>
+                                        <span className="bg-brand-bone/50 text-brand-charcoal/60 text-[9px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full border border-brand-bone">
+                                            {testimonial.safari}
+                                        </span>
+                                    </div>
                                 </div>
                             </div>
                         ))}
@@ -217,23 +221,23 @@ const CommunityPage = () => {
                 </div>
 
                 {/* CTA Section */}
-                <div className="relative overflow-hidden bg-[#212121] rounded-xl p-8 md:p-12 text-white text-center">
-                    <div className="absolute top-0 right-0 w-64 h-64 bg-[#7AB730]/10 rounded-full -translate-y-1/2 translate-x-1/2"></div>
-                    <div className="absolute bottom-0 left-0 w-48 h-48 bg-[#7AB730]/10 rounded-full translate-y-1/2 -translate-x-1/2"></div>
-                    <div className="relative">
-                        <div className="w-16 h-16 bg-[#7AB730] rounded-full flex items-center justify-center mx-auto mb-6">
-                            <FontAwesomeIcon icon={faHeart} className="text-2xl" />
+                <div className="relative overflow-hidden bg-brand-charcoal rounded-3xl p-12 md:p-20 text-white text-center group shadow-2xl">
+                    <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-gold/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl group-hover:scale-110 transition-transform duration-1000"></div>
+                    <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-brand-green/5 rounded-full translate-y-1/2 -translate-x-1/2 blur-3xl group-hover:scale-110 transition-transform duration-1000"></div>
+                    <div className="relative z-10">
+                        <div className="w-20 h-20 bg-brand-gold rounded-full flex items-center justify-center mx-auto mb-10 shadow-xl shadow-brand-gold/10">
+                            <FontAwesomeIcon icon={faHeart} className="text-3xl text-brand-charcoal" />
                         </div>
-                        <h3 className="text-2xl md:text-3xl font-bold mb-4">Ready to Join the Adventure?</h3>
-                        <p className="text-gray-400 mb-8 max-w-xl mx-auto">
-                            Become part of our community and start planning your dream safari today. Your African adventure awaits!
+                        <h3 className="text-4xl md:text-6xl font-serif mb-8 leading-tight">Ready to <span className="italic">Begin</span> Your Legacy?</h3>
+                        <p className="text-brand-bone/60 mb-12 max-w-2xl mx-auto text-xl font-light leading-relaxed">
+                            Join our community of global explorers and start planning a safari that resonates with your soul. The wild is calling.
                         </p>
-                        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                            <Link href="/contact" className="bg-[#7AB730] hover:bg-[#6a9e2a] text-white px-8 py-3 rounded-lg font-bold transition-colors">
-                                Plan Your Safari
+                        <div className="flex flex-col sm:flex-row gap-6 justify-center">
+                            <Link href="/contact" className="bg-brand-gold hover:bg-white text-brand-charcoal px-10 py-5 rounded-xl font-bold transition-all duration-300 shadow-lg uppercase tracking-widest text-xs">
+                                PLAN YOUR EXPERIENCE
                             </Link>
-                            <Link href="/contact" className="bg-white/10 hover:bg-white/20 text-white px-8 py-3 rounded-lg font-bold transition-colors">
-                                Contact Us
+                            <Link href="/contact" className="bg-white/10 hover:bg-white/20 text-white px-10 py-5 rounded-xl font-bold transition-all duration-300 border border-white/10 uppercase tracking-widest text-xs backdrop-blur-sm">
+                                INQUIRE NOW
                             </Link>
                         </div>
                     </div>

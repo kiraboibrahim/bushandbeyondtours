@@ -6,105 +6,100 @@ import "slick-carousel/slick/slick-theme.css";
 import { Slide } from "@/models/Slide";
 import Link from "next/link";
 import siteConfig from "@/app/siteConfig";
-
-export const slides: Slide[] = [
-    {
-        id: 1,
-        img: "/img/gallery/lodges.jpg",
-        title: "Ngiris Lodge",
-        description: "Get up close with Uganda's graceful giants at Murchison Falls National Park. A safari experience you will never forget!",
-        link: "#special-offer",
-    },
-    {
-        id: 2,
-        img: "/img/carousel-2.jpeg",
-        title: "Hotel Reservations",
-        description: "Relax in top-notch hotels as you enjoy breathtaking sunsets and delicious local cuisine along Lake Victoria or in Kampala.",
-        link: "#special-offer",
-    },
-    {
-        id: 3,
-        img: "/img/gallery/lodge-compound.jpg",
-        title: "Ngirisi Hill",
-        description: "Experience the thrill of watching majestic elephants roam the savannah during golden hour at Queen Elizabeth National Park.",
-        link: "#special-offer",
-    },
-    {
-        id: 5,
-        img: "/img/gallery/lodge-bedroom.jpeg",
-        title: "Ngirisi Hill Silverback Gorilla Lodge",
-        description: "Marvel at iconic acacia trees silhouetted against dramatic Ugandan sunsets. Perfect moments for photography and reflection.",
-        link: "#special-offer",
-    },
-];
+import { motion, AnimatePresence } from "framer-motion";
 
 const Carousel: React.FC = () => {
+    const slides = siteConfig.home.carousel.map((slide, index) => ({
+        ...slide,
+        img: siteConfig.images.carousel[index]
+    }));
+
+    const [currentSlide, setCurrentSlide] = React.useState(0);
 
     const settings = {
         dots: true,
         infinite: true,
-        speed: 1000,
+        fade: true,
+        speed: 2000,
         slidesToShow: 1,
         slidesToScroll: 1,
         autoplay: true,
-        autoplaySpeed: 5000,
+        autoplaySpeed: 6000,
         arrows: true,
-        pauseOnHover: true,
+        pauseOnHover: false,
         prevArrow: <PrevArrow />,
-        nextArrow: <NextArrow />
+        nextArrow: <NextArrow />,
+        beforeChange: (oldIndex: number, newIndex: number) => setCurrentSlide(newIndex),
     };
 
     return (
-        <div className="w-full p-0">
+        <div className="w-full p-0 overflow-hidden">
             <Slider {...settings}>
-                {slides.map((slide) => (
-                    <div key={slide.id} className="relative">
-                        <Image
-                            width="1920"
-                            height="600"
-                            className="w-full"
-                            src={slide.img}
-                            alt={`Slide ${slide.id}`}
-                            style={{ height: '600px', objectFit: 'cover' }}
-                        />
+                {slides.map((slide, index) => (
+                    <div key={slide.id} className="relative outline-none">
+                        <div className="overflow-hidden bg-brand-green">
+                            <Image
+                                width="1920"
+                                height="800"
+                                className={`w-full h-[600px] md:h-[800px] object-cover transition-transform duration-[6000ms] ease-linear ${currentSlide === index ? 'scale-110' : 'scale-100'
+                                    }`}
+                                src={slide.img}
+                                alt={slide.title}
+                                priority={index === 0}
+                            />
+                        </div>
                         {/* Gradient overlay for better text readability */}
                         <div
-                            className="absolute top-0 left-0 right-0 bottom-0 z-[1]"
-                            style={{
-                                background: 'linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.6))'
-                            }}
+                            className="absolute inset-0 z-[1] bg-gradient-to-b from-black/20 via-black/40 to-black/70"
                         />
                         <div
-                            className="absolute top-0 left-0 right-0 bottom-0 flex flex-col items-center justify-center z-[2]"
+                            className="absolute inset-0 flex flex-col items-center justify-center z-[2] text-center"
                         >
-                            <div className="p-3 max-w-[900px]">
-                                <h4
-                                    className="text-white uppercase mb-0 md:mb-3 text-lg"
-                                    style={{
-                                        letterSpacing: '3px',
-                                        textShadow: '2px 2px 4px rgba(0,0,0,0.8)'
-                                    }}
-                                >
-                                    {siteConfig.company.name} - Uganda
-                                </h4>
-                                <h1
-                                    className="text-[3.5rem] max-[1200px]:text-[calc(1.475rem_+_2.7vw)] font-light leading-[1.2] text-white mb-0 md:mb-4"
-                                    style={{
-                                        textShadow: '3px 3px 6px rgba(0,0,0,0.8)',
-                                        fontWeight: 'bold'
-                                    }}
-                                >
-                                    {slide.title}
-                                </h1>
-                                <Link
-                                    href={slide.link || "#special-offer"}
-                                    className="inline-block font-normal text-center align-middle select-none bg-[#7AB730] border border-[#7AB730] text-white py-[0.375rem] px-[0.75rem] md:py-3 md:px-5 text-base leading-[1.5] mt-2 no-underline hover:bg-[#669928] hover:border-[#5f8f25] hover:text-white transition-[color_0.15s_ease-in-out,background-color_0.15s_ease-in-out,border-color_0.15s_ease-in-out,box-shadow_0.15s_ease-in-out]"
-                                    style={{
-                                        boxShadow: '0 4px 15px rgba(0,0,0,0.3)'
-                                    }}
-                                >
-                                    Book Now
-                                </Link>
+                            <div className="p-4 max-w-[1000px]">
+                                <AnimatePresence mode="wait">
+                                    {currentSlide === index && (
+                                        <div className="flex flex-col items-center text-center">
+                                            <motion.h4
+                                                initial={{ opacity: 0, y: 20 }}
+                                                animate={{ opacity: 1, y: 0 }}
+                                                transition={{ duration: 0.8, delay: 0.2 }}
+                                                className="text-brand-gold uppercase mb-4 text-sm md:text-lg font-bold tracking-[6px]"
+                                                style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.5)' }}
+                                            >
+                                                {siteConfig.company.name}
+                                            </motion.h4>
+                                            <motion.h1
+                                                initial={{ opacity: 0, y: 30 }}
+                                                animate={{ opacity: 1, y: 0 }}
+                                                transition={{ duration: 0.8, delay: 0.4 }}
+                                                className="text-4xl md:text-7xl font-serif font-bold leading-tight text-white mb-8"
+                                                style={{ textShadow: '4px 4px 8px rgba(0,0,0,0.4)' }}
+                                            >
+                                                {slide.title}
+                                            </motion.h1>
+                                            <motion.p
+                                                initial={{ opacity: 0, y: 20 }}
+                                                animate={{ opacity: 1, y: 0 }}
+                                                transition={{ duration: 0.8, delay: 0.6 }}
+                                                className="text-white/90 text-lg md:text-xl mb-10 max-w-[700px] leading-relaxed hidden md:block"
+                                            >
+                                                {slide.description}
+                                            </motion.p>
+                                            <motion.div
+                                                initial={{ opacity: 0, scale: 0.9 }}
+                                                animate={{ opacity: 1, scale: 1 }}
+                                                transition={{ duration: 0.5, delay: 0.8 }}
+                                            >
+                                                <Link
+                                                    href={slide.link || "#destinations"}
+                                                    className="inline-block font-bold text-center align-middle bg-brand-gold text-brand-green py-4 px-10 text-sm uppercase tracking-widest hover:bg-white hover:text-brand-green transition-all duration-300 shadow-2xl rounded-sm"
+                                                >
+                                                    Start Your Journey
+                                                </Link>
+                                            </motion.div>
+                                        </div>
+                                    )}
+                                </AnimatePresence>
                             </div>
                         </div>
                     </div>
@@ -144,11 +139,11 @@ const NextArrow: React.FC<ArrowProps> = ({ onClick }) => (
     <div
         style={{ ...arrowStyle, right: 20 }}
         onClick={onClick}
-        onMouseEnter={(e) => {
+        onMouseEnter={(e: React.MouseEvent<HTMLDivElement>) => {
             e.currentTarget.style.background = "rgba(0,0,0,0.8)";
             e.currentTarget.style.transform = "translateY(-50%) scale(1.1)";
         }}
-        onMouseLeave={(e) => {
+        onMouseLeave={(e: React.MouseEvent<HTMLDivElement>) => {
             e.currentTarget.style.background = "rgba(0,0,0,0.6)";
             e.currentTarget.style.transform = "translateY(-50%) scale(1)";
         }}
@@ -167,11 +162,11 @@ const PrevArrow: React.FC<ArrowProps> = ({ onClick }) => (
     <div
         style={{ ...arrowStyle, left: 20 }}
         onClick={onClick}
-        onMouseEnter={(e) => {
+        onMouseEnter={(e: React.MouseEvent<HTMLDivElement>) => {
             e.currentTarget.style.background = "rgba(0,0,0,0.8)";
             e.currentTarget.style.transform = "translateY(-50%) scale(1.1)";
         }}
-        onMouseLeave={(e) => {
+        onMouseLeave={(e: React.MouseEvent<HTMLDivElement>) => {
             e.currentTarget.style.background = "rgba(0,0,0,0.6)";
             e.currentTarget.style.transform = "translateY(-50%) scale(1)";
         }}

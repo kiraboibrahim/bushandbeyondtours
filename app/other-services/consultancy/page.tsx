@@ -1,5 +1,5 @@
 import ServicePage from "../services";
-import services from "../data";
+import siteConfig from "../../siteConfig";
 
-const ConsultancyPage = () => <ServicePage service={services.consultancy} />;
+const ConsultancyPage = () => <ServicePage service={siteConfig.services.consultancy} />;
 export default ConsultancyPage;

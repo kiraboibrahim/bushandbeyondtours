@@ -1,6 +1,5 @@
 import ServicePage from "../services";
-import services from "../data";
+import siteConfig from "../../siteConfig";
 
-
-const HoneymoonPage = () => <ServicePage service={services.honeymoon} />;
+const HoneymoonPage = () => <ServicePage service={siteConfig.services.honeymoon} />;
 export default HoneymoonPage;
