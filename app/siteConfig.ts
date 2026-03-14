@@ -318,10 +318,10 @@ const siteConfig = {
             adventure: "/img/content/kayaking-nile.webp",
         },
         destinations: {
-            rwenzori: "/img/content/destination-rwenzori.webp",
+            rwenzori: "/img/content/destination-rwenzori.jpg",
             kampala: "/img/content/destination-kampala.webp",
-            elgon: "/img/content/destination-elgon.webp",
-            murchison: "/img/content/wildlife-safari-4.jpg",
+            elgon: "/img/content/destination-elgon.jpg",
+            murchison: "/img/content/destination-murchison.jpg",
             queen: "/img/content/wildlife-safari-5.jpg",
             bwindi: "/img/content/gorilla-trekking.jpg",
         },
@@ -368,7 +368,7 @@ const siteConfig = {
                 category: "Culture & Adventure",
                 author: "Admin",
                 date: { day: "05", month: "Sep" },
-                image: "/img/content/wildlife-safari-4.jpg",
+                image: "/img/content/destination-murchison.jpg",
                 link: "#"
             }
         ]
