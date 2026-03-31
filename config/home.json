@@ -1,0 +1,446 @@
+{
+  "home": {
+    "carousel": [
+      {
+        "id": 1,
+        "title": "Ugandan Wildlife Safari",
+        "description": "Experience the majestic giants of the pearl of Africa in their natural habitat.",
+        "link": "#destinations"
+      },
+      {
+        "id": 2,
+        "title": "Majestic Savanna Sunsets",
+        "description": "Witness the magnificent African sunset over the wild savanna, surrounded by grazing herds and untouched wilderness.",
+        "link": "#destinations"
+      },
+      {
+        "id": 3,
+        "title": "A Birder's Paradise",
+        "description": "Explore Uganda's diverse avian species, from the vibrant kingfisher to the rare and magnificent shoebill stork.",
+        "link": "#destinations"
+      }
+    ],
+    "about": {
+      "badge": "About Our Journey",
+      "title": "Experience Uganda's Wonders with Our Expertly Curated Safari Packages",
+      "description": "specializes in creating unforgettable safari adventures in Uganda's national parks. From wildlife encounters and scenic landscapes to cultural heritage and guided tours. We offer personalized experiences tailored to your budget and schedule."
+    },
+    "features": [
+      {
+        "icon": "faMoneyCheckAlt",
+        "title": "Competitive Pricing",
+        "description": "We offer safari packages, hotel reservations and air ticketing at best rates with great value for money and time spent with us"
+      },
+      {
+        "icon": "faAward",
+        "title": "Packages",
+        "description": "We offer a variety of tour packages that comes with life memorable experiences."
+      },
+      {
+        "icon": "faGlobe",
+        "title": "Motor Vehicle Hire",
+        "description": "We offer a variety of tourist customized vehicles at good rates."
+      }
+    ],
+    "destinations": {
+      "badge": "Discover Uganda",
+      "title": "Explore Top Destinations",
+      "list": [
+        {
+          "id": 1,
+          "name": "Murchison Falls",
+          "location": "Buluisa District",
+          "attractionsCount": 50,
+          "imageKey": "murchison"
+        },
+        {
+          "id": 2,
+          "name": "Bwindi Impenetrable",
+          "location": "South Western Uganda",
+          "attractionsCount": 30,
+          "imageKey": "bwindi"
+        },
+        {
+          "id": 3,
+          "name": "Queen Elizabeth",
+          "location": "Kasese District",
+          "attractionsCount": 25,
+          "imageKey": "queen"
+        },
+        {
+          "id": 4,
+          "name": "Kampala City",
+          "location": "Central Uganda",
+          "attractionsCount": 15,
+          "imageKey": "kampala"
+        },
+        {
+          "id": 5,
+          "name": "Rwenzori Mountains",
+          "location": "West Western Uganda",
+          "attractionsCount": 20,
+          "imageKey": "rwenzori"
+        },
+        {
+          "id": 6,
+          "name": "Kidepo Valley",
+          "location": "Eastern Uganda",
+          "attractionsCount": 10,
+          "imageKey": "elgon"
+        }
+      ]
+    },
+    "services": {
+      "badge": "Unwrapping the Pearl",
+      "title": "Tours & Travel Services",
+      "list": [
+        {
+          "icon": "faRoute",
+          "title": "Travel Guide",
+          "description": "Expert guides to lead you through Uganda's national parks and hidden gems."
+        },
+        {
+          "icon": "faTicketAlt",
+          "title": "Ticket Booking",
+          "description": "Seamless booking for safaris, park entries, and adventure activities."
+        },
+        {
+          "icon": "faHotel",
+          "title": "Hotel Booking",
+          "description": "Handpicked luxury lodges and accommodations for an unforgettable stay."
+        }
+      ]
+    },
+    "bookingForm": {
+      "destinations": [
+        {
+          "value": "murchison-falls",
+          "label": "Murchison Falls"
+        },
+        {
+          "value": "queen-elizabeth",
+          "label": "Queen Elizabeth"
+        },
+        {
+          "value": "lake-mburo",
+          "label": "Lake Mburo"
+        },
+        {
+          "value": "bwindi",
+          "label": "Bwindi Impenetrable Forest"
+        }
+      ],
+      "durations": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        7,
+        10,
+        14
+      ]
+    },
+    "specialOffer": {
+      "badge": "Group Discounts",
+      "title": "Get a 10% Discount on Group Safaris",
+      "description": "Embark on an unforgettable safari in Uganda's most iconic National Parks. Enjoy wildlife, breathtaking landscapes, and guided tours at a special discounted rate for groups of four and above.",
+      "highlights": [
+        "Guided safaris in Murchison Falls & Queen Elizabeth",
+        "Luxury lodges with stunning views",
+        "Customizable itineraries to fit your schedule"
+      ],
+      "formTitle": "Plan Your Trip",
+      "destinations": [
+        {
+          "value": "murchison-falls",
+          "label": "Murchison Falls National Park"
+        },
+        {
+          "value": "queen-elizabeth",
+          "label": "Queen Elizabeth National Park"
+        },
+        {
+          "value": "lake-mburo",
+          "label": "Lake Mburo National Park"
+        },
+        {
+          "value": "bwindi",
+          "label": "Bwindi Impenetrable Forest"
+        }
+      ]
+    },
+    "gallery": {
+      "badge": "Visual Journey",
+      "title": "Travel Moments Gallery"
+    },
+    "team": {
+      "badge": "Our Experts",
+      "title": "Meet Our Safari Guides"
+    },
+    "blog": {
+      "badge": "Insights & Stories",
+      "title": "Latest From Our Blog"
+    },
+    "testimonials": {
+      "badge": "Testimonials",
+      "title": "What Our Clients Say",
+      "items": [
+        {
+          "name": "Sarah Nakato",
+          "role": "Adventure Traveler",
+          "image": "/img/content/wildlife-safari-1.jpg",
+          "text": "The gorilla trekking in Bwindi was a once-in-a-lifetime experience. The Bush And Beyond guide was knowledgeable and very friendly!"
+        },
+        {
+          "name": "David Okello",
+          "role": "Safari Enthusiast",
+          "image": "/img/content/wildlife-safari-2.jpg",
+          "text": "Queen Elizabeth National Park safari exceeded my expectations. We saw tree climbing lions, elephants, hippos, Uganda kobs, hyenas in the wild!"
+        },
+        {
+          "name": "Grace Achieng",
+          "role": "Cultural Explorer",
+          "image": "/img/content/wildlife-safari-3.jpg",
+          "text": "Visiting the Ssese Islands was amazing. The beaches are pristine and the local community is welcoming and kind."
+        }
+      ]
+    },
+    "packages": {
+      "badge": "Featured Journeys",
+      "title": "Perfect Tour Packages",
+      "list": [
+        {
+          "id": 1,
+          "title": "Safari Adventure in Murchison Falls National Park",
+          "location": "Murchison Falls",
+          "duration": "3 days",
+          "people": "2 Persons",
+          "rating": 4.8,
+          "ratingCount": 120,
+          "imageKey": "murchison"
+        },
+        {
+          "id": 2,
+          "title": "Gorilla Trekking Experience in Bwindi Impenetrable Forest",
+          "location": "Bwindi",
+          "duration": "4 days",
+          "people": "2 Persons",
+          "rating": 5,
+          "ratingCount": 85,
+          "imageKey": "gorilla"
+        },
+        {
+          "id": 3,
+          "title": "Chimpanzee Tracking in Kibale National Park",
+          "location": "Kibale",
+          "duration": "3 days",
+          "people": "2 Persons",
+          "rating": 4.7,
+          "ratingCount": 60,
+          "imageKey": "chimp"
+        },
+        {
+          "id": 5,
+          "title": "Mountaineering at Rwenzori Mountains",
+          "location": "Rwenzori Mountains National Park",
+          "duration": "5 days",
+          "people": "2 Persons",
+          "rating": 4.9,
+          "ratingCount": 70,
+          "imageKey": "rwenzori"
+        },
+        {
+          "id": 6,
+          "title": "Adrenaline Adventure at the Nile",
+          "location": "Jinja",
+          "duration": "1 day",
+          "people": "2 Persons",
+          "rating": 4.5,
+          "ratingCount": 100,
+          "imageKey": "adventure"
+        }
+      ]
+    }
+  },
+  "images": {
+    "carousel": [
+      "/img/content/hero-wildlife-1.jpg",
+      "/img/content/hero-wildlife-2.jpg",
+      "/img/content/hero-wildlife-3.jpg"
+    ],
+    "about": {
+      "primary": "/img/content/gorilla-mother-baby.jpg",
+      "secondary": "/img/content/cultural-performance.jpg",
+      "tertiary": "/img/content/wildlife-safari-3.jpg"
+    },
+    "packages": {
+      "gorilla": "/img/content/gorilla-trekking.jpg",
+      "chimp": "/img/content/kibale-chimps.jpg",
+      "adventure": "/img/content/kayaking-nile.webp"
+    },
+    "destinations": {
+      "rwenzori": "/img/content/destination-rwenzor.jpg",
+      "kampala": "/img/content/destination-kampala.jpg",
+      "elgon": "/img/content/destination-elgon.jpg",
+      "murchison": "/img/content/destination-murchison.jpg",
+      "queen": "/img/content/destination-queen.jpg",
+      "bwindi": "/img/content/gorilla-trekking.jpg"
+    },
+    "services": {
+      "wildlife": "/img/content/wildlife-safari-1.jpg",
+      "culture": "/img/content/cultural-karimojong.jpg",
+      "transport": "/img/content/airport-welcome.jpg"
+    },
+    "gallery": [
+      {
+        "src": "/img/content/wildlife-safari-6.jpg",
+        "title": "Lion King",
+        "location": "Queen Elizabeth NP"
+      },
+      {
+        "src": "/img/content/wildlife-safari-7.jpg",
+        "title": "White Rhino",
+        "location": "Ziwa Rhino Sanctuary"
+      },
+      {
+        "src": "/img/content/wildlife-safari-8.jpg",
+        "title": "Leopard in Wait",
+        "location": "Murchison Falls NP"
+      },
+      {
+        "src": "/img/content/wildlife-safari-9.jpg",
+        "title": "African Elephant",
+        "location": "Kidepo Valley NP"
+      },
+      {
+        "src": "/img/content/gorilla-mother-baby.jpg",
+        "title": "Mountain Gorillas",
+        "location": "Bwindi Impenetrable"
+      },
+      {
+        "src": "/img/content/kibale-chimps.jpg",
+        "title": "Chimpanzee Tracking",
+        "location": "Kidepo Valley NP"
+      },
+      {
+        "src": "/img/content/cultural-performance.jpg",
+        "title": "Cultural Heritage",
+        "location": "Central Uganda"
+      },
+      {
+        "src": "/img/content/cultural-karimojong.jpg",
+        "title": "Community Tourism",
+        "location": "Karamoja Region"
+      },
+      {
+        "src": "/img/content/rafting-nile.jpg",
+        "title": "Nile Rafting",
+        "location": "Jinja"
+      },
+      {
+        "src": "/img/content/birding-finfoot.jpg",
+        "title": "Rare African Finfoot",
+        "location": "Mabamba Swamp"
+      }
+    ],
+    "team": [],
+    "blog": [
+      {
+        "id": 1,
+        "title": "Ultimate Guide to Mountain Gorilla Tracking in Uganda",
+        "category": "Travel Tips",
+        "author": "Admin",
+        "date": {
+          "day": "12",
+          "month": "Nov"
+        },
+        "image": "/img/content/gorilla-trekking.jpg",
+        "link": "#"
+      },
+      {
+        "id": 2,
+        "title": "Exploring the Wonders of Bwindi Impenetrable Forest",
+        "category": "Adventure",
+        "author": "Admin",
+        "date": {
+          "day": "20",
+          "month": "Oct"
+        },
+        "image": "/img/content/gorilla-trekking.jpg",
+        "link": "#"
+      },
+      {
+        "id": 3,
+        "title": "Murchison Falls: The World's Most Powerful Waterfall",
+        "category": "Culture & Adventure",
+        "author": "Admin",
+        "date": {
+          "day": "05",
+          "month": "Sep"
+        },
+        "image": "/img/content/destination-murchison.jpg",
+        "link": "#"
+      }
+    ]
+  },
+  "about": {
+    "tagline": "Experience · People · Places",
+    "stats": [
+      {
+        "num": "10+",
+        "label": "Years Experience"
+      },
+      {
+        "num": "500+",
+        "label": "Happy Travelers"
+      },
+      {
+        "num": "50+",
+        "label": "Safari Packages"
+      },
+      {
+        "num": "100%",
+        "label": "Tailor-Made"
+      }
+    ],
+    "story": {
+      "title": "Our Story",
+      "paragraphs": [
+        "Founded in 2020 by passionate Ugandan travel enthusiasts, BUSH & BEYOND TOURS became fully operational in 2026 with a bold vision: to share the breathtaking beauty of East Africa with the world.",
+        "Building on over a decade of combined expertise, we have established ourselves as one of Uganda's trusted tour operators, specializing in gorilla tracking, wildlife safaris, and authentic cultural experiences. Our name reflects our philosophy – we believe travel should be invigorating, energizing, and transformative.",
+        "Drawing on extensive experience and in-depth knowledge of the region's diverse attractions, we are committed to curating unique and authentic safari experiences that transcend the ordinary. Whether you're seeking your first African wildlife encounter, an adrenaline-fueled adventure, or a serene honeymoon.",
+        "We invite you to embark on a journey of discovery across the breathtaking landscapes of Uganda and beyond. Your adventure begins here with us."
+      ]
+    },
+    "values": [
+      {
+        "title": "Excellence",
+        "icon": "excellence",
+        "description": "Our team of expert travel specialists brings over 15 years of combined safari experience across East Africa. We partner exclusively with top-tier guides known for their professionalism and deep local knowledge, ensuring every journey is infused with authentic insights."
+      },
+      {
+        "title": "Passion",
+        "icon": "passion",
+        "description": "Your safari will be 100% tailor-made, designed around your interests, dreams, and budget. We don't take you on 'our safaris' – instead, you create the perfect trip with guidance from our specialists."
+      },
+      {
+        "title": "Authenticity",
+        "icon": "authenticity",
+        "description": "Proudly Ugandan-owned and managed, we bring authentic local perspective to every safari we craft. With deep roots in the region, we understand the land, the culture, and the people."
+      },
+      {
+        "title": "Community",
+        "icon": "community",
+        "description": "Tourism is a powerful tool for improving livelihoods in local communities. We actively participate in enriching the lives of communities we interact with – offering training and sourcing produce locally."
+      },
+      {
+        "title": "Responsibility",
+        "icon": "responsibility",
+        "description": "While delivering extraordinary African experiences, we are equally dedicated to sustainability and preserving wildlife, natural environments, and cultural heritage."
+      }
+    ],
+    "mission": "To create extraordinary safari experiences that transcend the ordinary by blending extensive regional knowledge, personalized service, and a commitment to sustainability. Our goal is to craft memorable adventures that inspire, educate, and delight our clients while fostering respect for the environment and local communities.",
+    "vision": "To be a leading catalyst for sustainable tourism in East Africa, creating unparalleled safari experiences that not only showcase the natural and cultural wonders of the region but also drive conservation efforts and community empowerment for generations to come."
+  }
+}

@@ -16,7 +16,7 @@ export interface RegistrationData {
 }
 
 const api = axios.create({
-    baseURL: "https://triptonicsafaris-api.onrender.com/api/",
+    baseURL: process.env.NEXT_PUBLIC_API_URL || "https://api.yourdomain.com/api/",
     timeout: 15000,
     headers: { "Content-Type": "application/json" },
 });

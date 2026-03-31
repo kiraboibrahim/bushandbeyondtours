@@ -1,0 +1,388 @@
+{
+  "ultimateUganda": {
+    "id": "ultimate-uganda",
+    "title": "8 Day Ultimate Uganda Safari",
+    "tagline": "The complete Uganda experience – primates, wildlife, and culture",
+    "price": "4,200",
+    "duration": "8 Days",
+    "locations": [
+      "Entebbe",
+      "Kibale Forest",
+      "Queen Elizabeth",
+      "Bwindi Forest",
+      "Lake Mburo"
+    ],
+    "stats": [
+      {
+        "num": "8",
+        "label": "Days"
+      },
+      {
+        "num": "7",
+        "label": "Nights"
+      },
+      {
+        "num": "4",
+        "label": "Parks"
+      },
+      {
+        "num": "1",
+        "label": "Gorilla Trek"
+      },
+      {
+        "num": "1",
+        "label": "Chimp Trek"
+      },
+      {
+        "num": "3",
+        "label": "Game Drives"
+      }
+    ],
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "Arrival in Entebbe",
+        "location": "Entebbe International Airport",
+        "accommodation": "Lake Victoria Serena Golf Resort",
+        "description": "Welcome to Uganda! Upon arrival at Entebbe International Airport, your guide will be waiting to greet you. Transfer to your luxury lakeside resort on the shores of Lake Victoria, Africa's largest lake.",
+        "highlights": [
+          "VIP airport meet & greet",
+          "Lake Victoria resort",
+          "Sunset boat cruise",
+          "Welcome dinner"
+        ]
+      },
+      {
+        "day": 2,
+        "title": "Transfer to Kibale Forest",
+        "location": "Entebbe → Fort Portal → Kibale",
+        "accommodation": "Primate Lodge Kibale",
+        "description": "Depart early morning for the scenic drive to Kibale Forest National Park, the Primate Capital of the World. The journey takes you through the heart of Uganda, passing fertile farmlands and crater lakes.",
+        "highlights": [
+          "Scenic western route",
+          "Crater lake viewpoints",
+          "Rwenzori Mountain views",
+          "Forest lodge check-in"
+        ]
+      },
+      {
+        "day": 3,
+        "title": "Chimpanzee Tracking & Bigodi Swamp",
+        "location": "Kibale Forest National Park",
+        "accommodation": "Primate Lodge Kibale",
+        "description": "Enter the ancient rainforest with expert guides, tracking the habituated chimp communities. Afternoon, visit the community-run Bigodi Wetland Sanctuary – a birder's paradise.",
+        "highlights": [
+          "Chimpanzee tracking",
+          "Primate species",
+          "Bigodi Swamp walk",
+          "Community conservation"
+        ]
+      },
+      {
+        "day": 4,
+        "title": "Queen Elizabeth National Park",
+        "location": "Kibale → Queen Elizabeth NP",
+        "accommodation": "Mweya Safari Lodge",
+        "description": "Check into your lodge perched on the Mweya Peninsula. After lunch, embark on the famous Kazinga Channel boat cruise – a journey past hippos, crocodiles, and elephants.",
+        "highlights": [
+          "Savannah landscapes",
+          "Mweya Peninsula views",
+          "Kazinga Channel cruise",
+          "Hippos & elephants"
+        ]
+      },
+      {
+        "day": 5,
+        "title": "Game Drives & Transfer to Bwindi",
+        "location": "Queen Elizabeth NP → Ishasha → Bwindi",
+        "accommodation": "Buhoma Lodge",
+        "description": "Morning game drive through the Kasenyi Plains. Later, drive south through the Ishasha sector, famous for tree-climbing lions, scanning the fig trees for these unique big cats.",
+        "highlights": [
+          "Early morning game drive",
+          "Big Five wildlife",
+          "Tree-climbing lions",
+          "Mountain scenery"
+        ]
+      },
+      {
+        "day": 6,
+        "title": "Mountain Gorilla Tracking",
+        "location": "Bwindi Impenetrable Forest",
+        "accommodation": "Buhoma Lodge",
+        "description": "Track the mountain gorillas! spend one magical hour in their presence – watching silverbacks, playful juveniles, and caring mothers. This intimate encounter is truly life-changing.",
+        "highlights": [
+          "Gorilla tracking experience",
+          "1 hour with gorillas",
+          "Silverback encounters",
+          "Celebration dinner"
+        ]
+      },
+      {
+        "day": 7,
+        "title": "Bwindi to Lake Mburo",
+        "location": "Bwindi → Lake Mburo National Park",
+        "accommodation": "Mihingo Lodge",
+        "description": "Head to Lake Mburo National Park, Uganda's hidden gem. enjoy a night game drive in an open vehicle with spotlight, searching for leopards, hyenas, and nocturnal creatures.",
+        "highlights": [
+          "Cultural center visit",
+          "Lake Mburo arrival",
+          "Luxury eco-lodge",
+          "Night game drive"
+        ]
+      },
+      {
+        "day": 8,
+        "title": "Bush Walk & Departure",
+        "location": "Lake Mburo → Equator → Entebbe",
+        "accommodation": "End of Safari",
+        "description": "Start your final day with a guided bush walk – experience the African bush on foot alongside zebras and impalas. Later, stop at the Uganda Equator for photos and final shopping.",
+        "highlights": [
+          "Guided bush walk",
+          "Walking with wildlife",
+          "Equator experience",
+          "Airport transfer"
+        ]
+      }
+    ],
+    "includes": [
+      "All airport transfers & ground transport",
+      "Professional English-speaking guide",
+      "Quality accommodation (full board)",
+      "Gorilla & Chimpanzee permits",
+      "Kazinga Channel boat cruise",
+      "Night game drive at Lake Mburo",
+      "Guided bush walk",
+      "All park entrance fees",
+      "Bottled water during safari"
+    ],
+    "excludes": [
+      "International flights",
+      "Travel insurance",
+      "Tourist visa",
+      "Personal expenses",
+      "Tips and gratuities",
+      "Alcoholic beverages"
+    ]
+  },
+  "gorillaChimp6Days": {
+    "id": "gorilla-chimp-6-days",
+    "title": "6 Day Gorilla & Chimp Tracking Safari",
+    "tagline": "The ultimate primate adventure combining chimpanzee and mountain gorilla tracking",
+    "price": "2,850",
+    "duration": "6 Days",
+    "locations": [
+      "Entebbe",
+      "Kibale Forest",
+      "Queen Elizabeth NP",
+      "Bwindi Forest"
+    ],
+    "stats": [
+      {
+        "num": "6",
+        "label": "Days"
+      },
+      {
+        "num": "5",
+        "label": "Nights"
+      },
+      {
+        "num": "3",
+        "label": "National Parks"
+      },
+      {
+        "num": "1",
+        "label": "Gorilla Trek"
+      },
+      {
+        "num": "1",
+        "label": "Chimp Trek"
+      }
+    ],
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "Arrival in Entebbe",
+        "location": "Entebbe International Airport",
+        "accommodation": "Protea Hotel Entebbe",
+        "description": "Welcome to Uganda, the Pearl of Africa! Upon arrival at Entebbe International Airport, you'll be warmly received by your representative. Transfer to your lakeside hotel situated on the shores of Lake Victoria.",
+        "highlights": [
+          "Airport meet & greet",
+          "Lake Victoria views",
+          "Optional botanical gardens visit",
+          "Welcome dinner"
+        ]
+      },
+      {
+        "day": 2,
+        "title": "Transfer to Kibale Forest",
+        "location": "Entebbe → Fort Portal → Kibale Forest",
+        "accommodation": "Primate Lodge Kibale",
+        "description": "After an early breakfast, embark on a scenic drive westward to Kibale Forest National Park, known as the 'Primate Capital of the World'.",
+        "highlights": [
+          "Scenic countryside drive",
+          "Crater lakes viewpoints",
+          "Fort Portal tea estates",
+          "Forest lodge experience"
+        ]
+      },
+      {
+        "day": 3,
+        "title": "Chimpanzee Tracking & Bigodi Swamp Walk",
+        "location": "Kibale Forest National Park",
+        "accommodation": "Primate Lodge Kibale",
+        "description": "Rise early for the highlight of Kibale – chimpanzee tracking! After lunch, visit the community-run Bigodi Wetland Sanctuary for a guided swamp walk.",
+        "highlights": [
+          "Chimpanzee tracking",
+          "1 hour with chimps",
+          "Bigodi Swamp walk",
+          "Community tourism experience"
+        ]
+      },
+      {
+        "day": 4,
+        "title": "Transfer to Bwindi via Queen Elizabeth NP",
+        "location": "Kibale → Queen Elizabeth NP → Bwindi",
+        "accommodation": "Buhoma Lodge",
+        "description": "Depart after breakfast for Bwindi Impenetrable Forest, home of the endangered mountain gorillas. En-route, traverse Queen Elizabeth National Park's Ishasha sector, famous for its tree-climbing lions.",
+        "highlights": [
+          "Queen Elizabeth NP transit",
+          "Tree-climbing lion search",
+          "Savannah wildlife",
+          "Highland scenery"
+        ]
+      },
+      {
+        "day": 5,
+        "title": "Mountain Gorilla Tracking",
+        "location": "Bwindi Impenetrable Forest National Park",
+        "accommodation": "Buhoma Lodge",
+        "description": "Today is the pinnacle of your safari – tracking mountain gorillas! Assigned to a gorilla family in groups of 8, you'll trek into the ancient, mist-covered forest.",
+        "highlights": [
+          "Gorilla tracking briefing",
+          "Forest trek experience",
+          "1 hour with gorilla family",
+          "Silverback encounter"
+        ]
+      },
+      {
+        "day": 6,
+        "title": "Return to Entebbe & Departure",
+        "location": "Bwindi → Equator → Entebbe Airport",
+        "accommodation": "End of Safari",
+        "description": "After a final breakfast in the forest, bid farewell to Bwindi and begin your return journey to Entebbe. Stop at the Uganda Equator for photos and souvenir shopping.",
+        "highlights": [
+          "Equator crossing experience",
+          "Photo opportunities",
+          "Souvenir shopping",
+          "Airport transfer"
+        ]
+      }
+    ],
+    "includes": [
+      "All airport transfers",
+      "Ground transportation in 4x4 safari vehicle",
+      "Professional English-speaking driver/guide",
+      "5 nights accommodation (full board)",
+      "1 Gorilla tracking permit",
+      "1 Chimpanzee tracking permit",
+      "Bigodi Swamp Walk",
+      "All park entrance fees",
+      "Bottled water during safari"
+    ],
+    "excludes": [
+      "International flights",
+      "Travel & medical insurance",
+      "Uganda visa fees",
+      "Personal expenses",
+      "Tips and gratuities",
+      "Alcoholic beverages"
+    ]
+  },
+  "gorilla3Days": {
+    "id": "gorilla-3-days",
+    "title": "3 Day Gorilla Tracking Safari",
+    "tagline": "A quick but unforgettable encounter with mountain gorillas",
+    "price": "1,450",
+    "duration": "3 Days",
+    "locations": [
+      "Entebbe",
+      "Bwindi Forest"
+    ],
+    "stats": [
+      {
+        "num": "3",
+        "label": "Days"
+      },
+      {
+        "num": "2",
+        "label": "Nights"
+      },
+      {
+        "num": "1",
+        "label": "National Park"
+      },
+      {
+        "num": "1",
+        "label": "Gorilla Trek"
+      }
+    ],
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "Arrival in Entebbe & Transfer to Bwindi",
+        "location": "Entebbe → Bwindi Impenetrable Forest",
+        "accommodation": "Buhoma Haven Lodge",
+        "description": "Welcome to Uganda! Upon arrival at Entebbe International Airport, you'll be greeted by your guide and begin your scenic drive to Bwindi Impenetrable Forest National Park.",
+        "highlights": [
+          "Airport pickup",
+          "Scenic countryside drive",
+          "Tea plantation views",
+          "Traditional village sightings"
+        ]
+      },
+      {
+        "day": 2,
+        "title": "Gorilla Tracking Experience",
+        "location": "Bwindi Impenetrable Forest National Park",
+        "accommodation": "Buhoma Haven Lodge",
+        "description": "Today is the highlight of your safari – the unforgettable Mountain Gorilla tracking experience! The trek through the dense, misty forest can take 2-8 hours.",
+        "highlights": [
+          "Pre-tracking briefing",
+          "Guided forest trek",
+          "1 hour with gorillas",
+          "Professional photography opportunities"
+        ]
+      },
+      {
+        "day": 3,
+        "title": "Departure to Entebbe",
+        "location": "Bwindi → Entebbe International Airport",
+        "accommodation": "End of Safari",
+        "description": "After a leisurely breakfast, begin your return journey to Entebbe. Stop at the Equator for photo opportunities and souvenir shopping.",
+        "highlights": [
+          "Equator crossing",
+          "Photo opportunities",
+          "Souvenir shopping",
+          "Airport drop-off"
+        ]
+      }
+    ],
+    "includes": [
+      "Airport transfers",
+      "Ground transportation in 4x4 safari vehicle",
+      "Professional English-speaking guide",
+      "2 nights accommodation (full board)",
+      "Gorilla tracking permit",
+      "All park entrance fees",
+      "Bottled water during safari"
+    ],
+    "excludes": [
+      "International flights",
+      "Travel insurance",
+      "Visa fees",
+      "Personal expenses",
+      "Tips and gratuities",
+      "Alcoholic beverages"
+    ]
+  }
+}

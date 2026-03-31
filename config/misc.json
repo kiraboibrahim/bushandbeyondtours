@@ -1,0 +1,101 @@
+{
+  "community": {
+    "stats": [
+      {
+        "icon": "users",
+        "num": "5,000+",
+        "label": "Community Members"
+      },
+      {
+        "icon": "map-marked-alt",
+        "num": "500+",
+        "label": "Safaris Completed"
+      },
+      {
+        "icon": "camera",
+        "num": "2,000+",
+        "label": "Photos Shared"
+      },
+      {
+        "icon": "globe",
+        "num": "45+",
+        "label": "Countries Reached"
+      }
+    ],
+    "testimonials": [
+      {
+        "name": "Sarah Mitchell",
+        "location": "United States",
+        "text": "The gorilla trekking experience was absolutely life-changing. Everything was seamless from start to finish!",
+        "safari": "3-Day Gorilla Safari"
+      },
+      {
+        "name": "James & Emma",
+        "location": "United Kingdom",
+        "text": "Our honeymoon safari exceeded all expectations. The team's attention to detail made it truly special.",
+        "safari": "8-Day Uganda Safari"
+      },
+      {
+        "name": "Klaus Weber",
+        "location": "Germany",
+        "text": "Professional, knowledgeable guides and incredible wildlife encounters. Highly recommend!",
+        "safari": "6-Day Gorilla & Chimp Safari"
+      }
+    ],
+    "engagement": [
+      {
+        "icon": "comments",
+        "title": "Community Forum",
+        "description": "Engage in discussions, share tips, and connect with fellow travelers who share your passion for African wildlife.",
+        "buttonText": "Join Discussions",
+        "href": "#"
+      },
+      {
+        "icon": "camera",
+        "title": "Photo Gallery",
+        "description": "Share your safari moments and browse stunning wildlife photography from our community members.",
+        "buttonText": "View Gallery",
+        "href": "/#gallery"
+      },
+      {
+        "icon": "user-friends",
+        "title": "Travel Buddies",
+        "description": "Find travel companions for group safaris and share costs while making new friends.",
+        "buttonText": "Find Buddies",
+        "href": "#"
+      }
+    ]
+  },
+  "payment": {
+    "securityFeatures": [
+      {
+        "icon": "shield-alt",
+        "title": "Secure Payments",
+        "desc": "256-bit SSL encryption"
+      },
+      {
+        "icon": "lock",
+        "title": "Data Protection",
+        "desc": "Your info is safe with us"
+      },
+      {
+        "icon": "headset",
+        "title": "24/7 Support",
+        "desc": "We're here to help"
+      }
+    ],
+    "reasonsToPayOnline": [
+      "Instant payment confirmation",
+      "Secure encrypted transactions",
+      "Multiple currency support",
+      "Email receipt provided",
+      "24/7 payment processing"
+    ],
+    "acceptedCurrencies": [
+      "USD",
+      "EUR",
+      "GBP",
+      "UGX"
+    ]
+  }
+}

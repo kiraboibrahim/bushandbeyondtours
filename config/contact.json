@@ -1,0 +1,20 @@
+{
+  "email": "bushandbeyondtours2020@gmail.com",
+  "phoneNumber": "+256 772 456789",
+  "location": "Kawempe, Kampala - Uganda",
+  "poBox": "P.O. Box 1234, Kampala, Uganda",
+  "businessHours": "Mon-Sat, 8:00 AM - 6:00 PM",
+  "hero": {
+    "badge": "Connect With Us",
+    "title": "Contact Our Experts",
+    "tagline": "Let us help you craft your perfect Ugandan safari adventure with personalized attention and local expertise."
+  },
+  "reasons": [
+    "Custom safari package inquiries",
+    "Gorilla & chimp permit availability",
+    "Group booking discounts",
+    "Corporate retreat planning",
+    "Honeymoon & special occasions",
+    "Travel advice & recommendations"
+  ]
+}

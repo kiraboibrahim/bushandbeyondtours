@@ -1,0 +1,118 @@
+{
+  "main": [
+    {
+      "label": "Home",
+      "href": "/"
+    },
+    {
+      "label": "About Us",
+      "href": "/about"
+    },
+    {
+      "label": "Community",
+      "href": "/community"
+    },
+    {
+      "label": "Safaris",
+      "href": "#safaris",
+      "dropdown": [
+        {
+          "label": "Three Days Gorilla Tracking",
+          "href": "/safaris/three-days-gorilla-tracking"
+        },
+        {
+          "label": "Six Days of Gorilla Tracking and Chimp Tracking",
+          "href": "/safaris/six-days-gorilla-chimp-tracking"
+        },
+        {
+          "label": "Eight Days Safari",
+          "href": "/safaris/eight-days-safari"
+        }
+      ]
+    },
+    {
+      "label": "Other Services",
+      "href": "#services",
+      "dropdown": [
+        {
+          "label": "Car Rentals",
+          "href": "/other-services/car-rental"
+        },
+        {
+          "label": "Honeymoon Package",
+          "href": "/other-services/honey-moon"
+        },
+        {
+          "label": "Air Ticketing",
+          "href": "/other-services/air-ticketing"
+        },
+        {
+          "label": "Consultancy",
+          "href": "/other-services/consultancy"
+        }
+      ]
+    },
+    {
+      "label": "Contact Us",
+      "href": "/contact"
+    },
+    {
+      "label": "Pay Here",
+      "href": "/pay"
+    }
+  ],
+  "footer": {
+    "services": [
+      {
+        "label": "About",
+        "href": "/about"
+      },
+      {
+        "label": "Destinations",
+        "href": "/#destinations"
+      },
+      {
+        "label": "Safari Packages",
+        "href": "/#packages"
+      },
+      {
+        "label": "Luxury Lodges",
+        "href": "/#gallery"
+      },
+      {
+        "label": "Guided Tours",
+        "href": "/#services"
+      },
+      {
+        "label": "Testimonials",
+        "href": "/#testimonials"
+      }
+    ],
+    "usefulLinks": [
+      {
+        "label": "About",
+        "href": "/about"
+      },
+      {
+        "label": "Destinations",
+        "href": "/#destinations"
+      },
+      {
+        "label": "Services",
+        "href": "/#services"
+      },
+      {
+        "label": "Packages",
+        "href": "/#packages"
+      },
+      {
+        "label": "Guides",
+        "href": "/#team"
+      },
+      {
+        "label": "Blog",
+        "href": "/#blog"
+      }
+    ]
+  }
+}
